@@ -1,8 +1,50 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
 
-*{
-  color: rgb(28, 27, 27);
-  text-align: center;
+* {
+  font-family: "Quantico";
+  /* background-color: #373a46; */
+}
+
+.content {
+  background-color: #373a46;
+}
+
+.sidebar {
+  background-color: #33333d;
+  box-shadow: 20px;
+}
+
+.title {
+  color: #5eb5f8;
+  font-size: 29px;
+}
+
+.navitems {
+  color: #676976;
+  transition: 0.4s;
+  font-size: 26px;
+}
+
+.navitems:hover {
+  color: #fefdff;
+}
+
+.navitems:active {
+  color: #fefdff;
+}
+
+.logoutbtn {
+  border-style: solid;
+  border-color: #5eb5f8;
+  color: #5eb5f8;
+  border-width: 2px;
+  border-radius: 12.5px;
+  transition: 0.4s;
+}
+
+.logoutbtn:hover {
+  border-color: #fefdff;
+  color: #fefdff;
 }
 
 body {
