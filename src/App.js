@@ -10,6 +10,10 @@ import IpoDetail from "../src/Pages/IpoDetail";
 function App() {
   return (
     <div>
+      <div>
+        {/* <Navbar /> */}
+      </div>
+
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/news" element={<News />} />
