@@ -7,11 +7,11 @@ const StockCard = () => {
         <div class="card-body stockcard-body">
           <div class="row">
             <div class="col-6">
-              <p class="mb-1 stocktitle">AAPL</p>
+              <p class="mb-3 mb-sm-2 stocktitle">AAPL</p>
               <p class="mb-0 stockname">Apple Inc.</p>
             </div>
             <div class="col-6 text-end">
-              <p class="mb-1 font-weight-bold">$150.00</p>
+              <p class="mb-3 mb-sm-2 font-weight-bold">$150.00</p>
               <p class="mb-0 text-success font-weight-bold">+1.25%</p>
             </div>
           </div>

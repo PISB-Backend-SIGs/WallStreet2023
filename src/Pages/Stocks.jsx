@@ -3,7 +3,7 @@ import StockCard from "../Components/StockCard";
 
 const Stocks = () => {
   return (
-    <div className="container p-5">
+    <div className="container p-1 p-sm-5">
 
       {/* Searchbar */}
       <div className="mt-1 mb-4">
@@ -14,7 +14,7 @@ const Stocks = () => {
               placeholder="Search stocks by symbol" aria-label="Search" autocomplete="off"/>
           </div>
           </div>
-          <div className="btnbalance px-3 me-3 text-center p-2 shadow bi bi-wallet"> $1000.00</div>
+          <div className="btnbalance px-3 me-3 text-center p-2 shadow bi bi-wallet d-none d-sm-block "> $1000.00</div>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import React from "react";
 
 const NewsDetail = () => {
+
   return (
     <div className="container p-3 p-sm-5">
       <div className="mt-2">

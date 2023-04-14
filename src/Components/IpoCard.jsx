@@ -2,12 +2,12 @@ import React from 'react'
 
 const IpoCard = () => {
   return (
-    <div className="card border-0 shadow">
+    <div className="card shadow" style={{ backgroundColor: "#3d3d4d", color: "#fefdff", borderRadius: "10px" }}>
         <div
           className="card-body p-2 px-3"
-          style={{ backgroundColor: "#3d3d4d", color: "#fefdff" }}
+          style={{ backgroundColor: "#3d3d4d", color: "#fefdff", borderRadius: "10px" }}
         >
-          <div className="row row-cols-2 row-cols-sm-4 g-3 align-items-center">
+          <div className="row row-cols-2 row-cols-sm-4 g-4 align-items-center">
             <div className="col text-start text-sm-center">
               <p className="card-text" style={{fontWeight: "bold"}}>APPL</p>
             </div>
