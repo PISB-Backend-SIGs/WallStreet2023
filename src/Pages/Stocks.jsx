@@ -8,12 +8,10 @@ const Stocks = () => {
       {/* Searchbar */}
       <div className="mt-1 mb-4">
         <div className="d-flex flex-row justify-content-between">
-          <div className="">
-          <div className="form-outline">
-            <input type="search" id="form1" className="searchbar ms-3 form-control shadow-lg py-2"
-              placeholder="Search stocks by symbol" aria-label="Search" autocomplete="off"/>
-          </div>
-          </div>
+            <div className="form-outline mobilesearchbar">
+              <input type="search" id="form1" className="searchbar ms-0 ms-sm-3 form-control shadow-lg py-2"
+                placeholder="Search stocks by symbol" aria-label="Search" autocomplete="off"/>
+            </div>
           <div className="btnbalance px-3 me-3 text-center p-2 shadow bi bi-wallet d-none d-sm-block "> $1000.00</div>
         </div>
       </div>

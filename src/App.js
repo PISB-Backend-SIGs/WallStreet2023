@@ -22,8 +22,11 @@ function App() {
       <div className={`container-fluid`}>
         <div className="row flex-nowrap">
           {/* Sidebar */}
-          <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0">
+          <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0 position-fixed">
             <Sidebar />
+          </div>
+          <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0">
+
           </div>
           {/* All content */}
           <div className="col-md-9 col-xl-10 col-12 content">

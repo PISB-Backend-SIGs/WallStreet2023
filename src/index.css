@@ -163,8 +163,28 @@
   color: #fefdff;
 }
 
+
 body {
   margin: 0;
   background-color: #373a46;
 }
 
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 576px) {
+  .searchbar{
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: -30px;
+    padding-block: 15px;
+    height: 45px;
+    
+  }
+  .mobilesearchbar{
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
