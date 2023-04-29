@@ -9,7 +9,7 @@ const Ipo = () => {
     
     <div className="container p-3 p-sm-5">
 
-      <div className="h3 upcoming mb-4 text-center">
+      <div className="h3 ipoupcoming mb-3 mb-sm-4 text-center">
         Upcoming IPO's
       </div>
 

@@ -7,7 +7,7 @@ const Ranking = () => {
 
   return (
     <div className="container p-0 p-sm-5">
-      <div className="h3 upcoming mb-4 text-center">Ranking</div>
+      <div className="h3 ranking mb-3 mb-sm-4 text-center">Ranking</div>
       <br/>
       <div className="row row-cols-1 g-4 g-sm-3">
         {

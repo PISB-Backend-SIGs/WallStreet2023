@@ -145,9 +145,20 @@
   color: #fefdff;
   font-size: 20px;
   line-height: 2.3rem; 
+  text-align: justify;
 }
 
 .upcoming{
+  color: #5eb5f8;
+  font-size: 25px;
+  margin-top: 10px;
+}
+.ipoupcoming{
+  color: #5eb5f8;
+  font-size: 25px;
+  margin-top: 10px;
+}
+.ranking{
   color: #5eb5f8;
   font-size: 25px;
   margin-top: 10px;
@@ -186,5 +197,20 @@ body {
     width: 100%;
     margin-left: 10px;
     margin-right: 10px;
+  }
+  .upcoming{
+    margin-top: 38px;
+  }
+  .ipoupcoming{
+    margin-top:28px;
+  }
+  .ranking{
+    margin-top:42px;
+  }
+  .newsdetailheadline{
+    margin-top: 30px;
+  }
+  .newsbody{
+    text-align: left;
   }
 }
