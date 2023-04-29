@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "../src/Pages/Home";
 import News from "../src/Pages/News";
 import NewsDetail from "../src/Pages/NewsDetail";
@@ -9,8 +9,12 @@ import IpoDetail from "../src/Pages/IpoDetail";
 import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
 import Ranking from "./Pages/Ranking";
+import Login from "./Pages/Login";
+import { UseAuthContext } from "./Hooks/UseAuthContext";
 
 function App() {
+
+  const { user } = UseAuthContext()
 
   return (
     <div>
@@ -31,14 +35,15 @@ function App() {
           {/* All content */}
           <div className="col-md-9 col-xl-10 col-12 content">
             <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/news" element={<News />} />
-              <Route exact path="/:newsdetail" element={<NewsDetail />} />
-              <Route exact path="/stocks" element={<Stocks />} />
-              <Route exact path="/stocksdetail" element={<StocksDetail />} />
-              <Route exact path="/ipo" element={<Ipo />} />
-              <Route exact path="/ipodetail" element={<IpoDetail />} />
-              <Route exact path="/ranking" element={<Ranking />} />
+              <Route exact path="/" element={user ? <Home /> : <Navigate to="/login"/>} />
+              <Route exact path="/news" element={user ? <News /> : <Navigate to="/login"/>} />
+              <Route exact path="/:newsdetail" element={user ? <NewsDetail /> : <Navigate to="/login"/>} />
+              <Route exact path="/stocks" element={user ? <Stocks /> : <Navigate to="/login"/> }/>
+              <Route exact path="/stocksdetail" element={user ? <StocksDetail /> : <Navigate to="/login"/>} />
+              <Route exact path="/ipo" element={user ? <Ipo /> : <Navigate to="/login"/>} />
+              <Route exact path="/ipodetail" element={user ? <IpoDetail /> : <Navigate to="/login"/>} />
+              <Route exact path="/ranking" element={user ? <Ranking /> : <Navigate to="/login"/>} />
+              <Route exact path="/login" element={!user ? <Login/> : <Navigate to="/"/>} />
             </Routes>
           </div>
         </div>
