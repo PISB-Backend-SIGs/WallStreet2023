@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
+import axios from "axios";
 import RankCard from "../Components/RankCard";
 
 const Ranking = () => {
 
-  const arr = [1,2,3,4,5,6,7,8,9]
+  const [ranks, setRanks] = useState([]);
+
+  useEffect( () => {
+    axios.get('http://127.0.0.1:8000/api/leaderboard/')
+    .then(response => {
+      setRanks(response.data)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }, [])
 
   return (
     <div className="container p-0 p-sm-5">
@@ -12,13 +23,10 @@ const Ranking = () => {
       <div className="row row-cols-1 g-4 g-sm-3">
         {
           <>
-          {
-            arr.map((i)=>(
-              <div className="col">
-                <RankCard/>
-              </div>
-            ))
-          }
+          {ranks.map(rank => {
+            return <RankCard key={rank.id} {...rank}/>
+          })}
+
           </>
         }
       </div>

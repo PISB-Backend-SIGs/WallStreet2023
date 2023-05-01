@@ -43,7 +43,7 @@ function App() {
               <Route exact path="/stocksdetail" element={user ? <StocksDetail /> : <Navigate to="/login"/>} />
               <Route exact path="/ipo" element={user ? <Ipo /> : <Navigate to="/login"/>} />
               <Route exact path="/ipodetail" element={user ? <IpoDetail /> : <Navigate to="/login"/>} />
-              <Route exact path="/ranking" element={user ? <Ranking /> : <Navigate to="/login"/>} />
+              <Route exact path="/ranking" element={<Ranking />} />
               <Route exact path="/login" element={!user ? <Login1/> : <Navigate to="/"/>} />
             </Routes>
           </div>

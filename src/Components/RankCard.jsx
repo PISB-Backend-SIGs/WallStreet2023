@@ -1,6 +1,7 @@
 import React from "react";
 
-const RankCard = () => {
+const RankCard = ({id, rank, user_name, net_worth}) => {
+  console.log(id, user_name)
   return (
     <div className="container">
       <div
@@ -9,9 +10,9 @@ const RankCard = () => {
       >
         <div className="card-body" style={{ padding: "12px" }}>
           <div className="d-flex justify-content-around">
-            <div className="">1.</div>
-            <div>Anonymous</div>
-            <div>$1000</div>
+            <div className="">{rank}</div>
+            <div>{user_name}</div>
+            <div>{net_worth}</div>
           </div>
         </div>
       </div>
