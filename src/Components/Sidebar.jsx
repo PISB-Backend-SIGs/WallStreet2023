@@ -1,7 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { UseAuthContext } from "../Hooks/UseAuthContext";
+import { UseLogout } from "../Hooks/UseLogout";
 
 const Sidebar = () => {
+
+  const { user } = UseAuthContext()
+  const {logout} = UseLogout()
+
+  const handleLogout = () => {
+    logout()
+  }
+
   return (
     <div>
       {/* <!-- Side Bar --> */}
@@ -21,7 +31,7 @@ const Sidebar = () => {
           className="nav flex-column mb-0 align-items-center align-items-sm-start my-auto"
           id="menu"
         >
-          <li className="nav-item">
+          {user && <li className="nav-item">
             <NavLink
               exact
               to="/stocks"
@@ -30,9 +40,9 @@ const Sidebar = () => {
               {" "}
               Stocks
             </NavLink>
-          </li>
+          </li>}
 
-          <li className="nav-item">
+          {user && <li className="nav-item">
             <NavLink
               exact
               to="/news"
@@ -41,9 +51,9 @@ const Sidebar = () => {
               {" "}
               News
             </NavLink>
-          </li>
+          </li>}
 
-          <li className="nav-item">
+          {user && <li className="nav-item">
             <NavLink
               exact
               to="/ipo"
@@ -52,9 +62,9 @@ const Sidebar = () => {
               {" "}
               Ipo
             </NavLink>
-          </li>
+          </li>}
 
-          <li className="nav-item">
+          {user && <li className="nav-item">
             <NavLink
               exact
               to="/portfolio"
@@ -63,7 +73,7 @@ const Sidebar = () => {
               {" "}
               Portfolio
             </NavLink>
-          </li>
+          </li>}
 
           <li className="nav-item">
             <NavLink
@@ -77,7 +87,7 @@ const Sidebar = () => {
           </li>
         </ul>
 
-        <btn className="bi bi-bar-chart h5 bi bi-box-arrow-left align-items-center align-items-sm-start my-4 mt-auto logoutbtn py-2 px-3">
+        <btn className="bi bi-bar-chart h5 bi bi-box-arrow-left align-items-center align-items-sm-start my-4 mt-auto logoutbtn py-2 px-3" onClick={handleLogout}>
           {" "}
           Logout
         </btn>

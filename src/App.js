@@ -10,6 +10,7 @@ import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
 import Ranking from "./Pages/Ranking";
 import Login from "./Pages/Login";
+import Login1 from "./Pages/Login1";
 import { UseAuthContext } from "./Hooks/UseAuthContext";
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
               <Route exact path="/ipo" element={user ? <Ipo /> : <Navigate to="/login"/>} />
               <Route exact path="/ipodetail" element={user ? <IpoDetail /> : <Navigate to="/login"/>} />
               <Route exact path="/ranking" element={user ? <Ranking /> : <Navigate to="/login"/>} />
-              <Route exact path="/login" element={!user ? <Login/> : <Navigate to="/"/>} />
+              <Route exact path="/login" element={!user ? <Login1/> : <Navigate to="/"/>} />
             </Routes>
           </div>
         </div>
