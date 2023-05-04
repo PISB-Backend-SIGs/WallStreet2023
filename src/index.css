@@ -181,7 +181,7 @@ body {
 }
 
 
-
+/*Login form*/
 .login-page {
   display: flex;
   justify-content: center;
@@ -231,6 +231,61 @@ body {
   text-align: center;
 }
 
+/*Modal*/
+.ipoModal{
+  background-color : #3d3d4d;
+}
+
+.modal-dialog {
+  max-width: 900px;
+  display:flex;
+  align-items:center;
+  min-height:calc(100%-0rem)
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width : auto;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+.modalcontent {
+  font-weight: lighter;
+  font-size: 16px;
+  align-content: justify;
+}
+.modal-body {
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+
+.modalclosebtn{
+  width: auto;
+}
+.ipodetailtitle{
+  font-size: 19px;
+  color: #5eb5f8;
+}
+.modaltitle{
+  color: #5eb5f8;
+  flex: 1;
+  margin: 0 auto;
+}
+
+.stockquantity{
+  width: 80px;
+  padding: 2px;
+}
+
+.modal-footer{
+  justify-content: center;
+}
+
+.modal{
+  text-align:center;
+}
 
 
 /* Media Queries */

@@ -12,6 +12,7 @@ import Ranking from "./Pages/Ranking";
 import Login from "./Pages/Login";
 import Login1 from "./Pages/Login1";
 import { UseAuthContext } from "./Hooks/UseAuthContext";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
 
   return (
     <div>
+
+      <ToastContainer theme="dark"/>
 
       <div className="d-sm-none">
         <Navbar />
@@ -41,7 +44,7 @@ function App() {
               <Route exact path="/:newsdetail" element={user ? <NewsDetail /> : <Navigate to="/login"/>} />
               <Route exact path="/stocks" element={user ? <Stocks /> : <Navigate to="/login"/> }/>
               <Route exact path="/stocksdetail" element={user ? <StocksDetail /> : <Navigate to="/login"/>} />
-              <Route exact path="/ipo" element={user ? <Ipo /> : <Navigate to="/login"/>} />
+              <Route exact path="/ipo" element={<Ipo />} />
               <Route exact path="/ipodetail" element={user ? <IpoDetail /> : <Navigate to="/login"/>} />
               <Route exact path="/ranking" element={<Ranking />} />
               <Route exact path="/login" element={!user ? <Login1/> : <Navigate to="/"/>} />

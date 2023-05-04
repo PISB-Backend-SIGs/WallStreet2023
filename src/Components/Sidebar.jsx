@@ -53,7 +53,7 @@ const Sidebar = () => {
             </NavLink>
           </li>}
 
-          {user && <li className="nav-item">
+          <li className="nav-item">
             <NavLink
               exact
               to="/ipo"
@@ -62,7 +62,7 @@ const Sidebar = () => {
               {" "}
               Ipo
             </NavLink>
-          </li>}
+          </li>
 
           {user && <li className="nav-item">
             <NavLink
