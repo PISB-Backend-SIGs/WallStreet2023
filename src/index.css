@@ -186,7 +186,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 85vh;
 }
 
 .login-form {
@@ -286,6 +286,55 @@ body {
 .modal{
   text-align:center;
 }
+
+
+/* Home page & Portfolio */
+section{
+  padding: 40px 0;
+}
+.navbartitle{
+  color: #5eb5f8;
+  font-size: 26px;
+}
+.footer{
+  background-color: hsl(240, 19%, 14%);
+  padding: 9px 0px
+}
+.desktopNavbar{
+  background-color: #262636;
+  padding:5px;
+  margin-bottom: 0px;
+}
+.content{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.ourTeamTitle{
+  color: #5eb5f8;
+  font-size: 28px;
+  margin-top: 10px;
+}
+.portfoliotitle{
+  color: #5eb5f8;
+  font-size: 28px;
+  margin-top: 10px;
+}
+.navItem{
+  margin: 0px 8px;
+}
+.navItem:focus{
+  color:#5eb5f8;
+}
+.navItem:active{
+  color:#5eb5f8;
+}
+.navItem:hover{
+  color:#5eb5f8;
+}
+.homepage{
+  margin-top: 20px;
+}
+
 
 
 /* Media Queries */

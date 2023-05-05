@@ -12,46 +12,83 @@ import Ranking from "./Pages/Ranking";
 import Login from "./Pages/Login";
 import Login1 from "./Pages/Login1";
 import { UseAuthContext } from "./Hooks/UseAuthContext";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
+import DesktopNavbar from "./Components/DesktopNavbar";
+import Footer from "./Components/Footer";
 
 function App() {
-
-  const { user } = UseAuthContext()
+  const { user } = UseAuthContext();
+  const css = (user) ? "col-md-9 col-xl-10 col-12 content" : "col-12 content"
 
   return (
     <div>
+      <ToastContainer theme="dark" />
 
-      <ToastContainer theme="dark"/>
-
+      {/* MOBILE NAVBAR */}
       <div className="d-sm-none">
         <Navbar />
       </div>
 
+
+      {/* DESKTOP NAVBAR */}
+      <div className="d-none d-sm-block">
+        {!user && <DesktopNavbar/>}
+      </div>
+
+      {!user && <Footer/>}
+
       <div className={`container-fluid`}>
         <div className="row flex-nowrap">
-          {/* Sidebar */}
-          <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0 position-fixed">
-            <Sidebar />
-          </div>
-          <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0">
 
-          </div>
+          {/* Sidebar */}
+          {user && <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0 position-fixed">
+            <Sidebar />
+          </div>}
+          {user && <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0"></div>}
+
           {/* All content */}
-          <div className="col-md-9 col-xl-10 col-12 content">
+          <div className={css}>
             <Routes>
-              <Route exact path="/" element={user ? <Home /> : <Navigate to="/login"/>} />
-              <Route exact path="/news" element={user ? <News /> : <Navigate to="/login"/>} />
-              <Route exact path="/:newsdetail" element={user ? <NewsDetail /> : <Navigate to="/login"/>} />
-              <Route exact path="/stocks" element={user ? <Stocks /> : <Navigate to="/login"/> }/>
-              <Route exact path="/stocksdetail" element={user ? <StocksDetail /> : <Navigate to="/login"/>} />
+              <Route exact path="/" element={<Home />} />
+              <Route
+                exact
+                path="/news"
+                element={user ? <News /> : <Navigate to="/login" />}
+              />
+              <Route
+                exact
+                path="/:newsdetail"
+                element={user ? <NewsDetail /> : <Navigate to="/login" />}
+              />
+              <Route
+                exact
+                path="/stocks"
+                element={user ? <Stocks /> : <Navigate to="/login" />}
+              />
+              <Route
+                exact
+                path="/stocksdetail"
+                element={user ? <StocksDetail /> : <Navigate to="/login" />}
+              />
               <Route exact path="/ipo" element={<Ipo />} />
-              <Route exact path="/ipodetail" element={user ? <IpoDetail /> : <Navigate to="/login"/>} />
+              <Route
+                exact
+                path="/ipodetail"
+                element={user ? <IpoDetail /> : <Navigate to="/login" />}
+              />
               <Route exact path="/ranking" element={<Ranking />} />
-              <Route exact path="/login" element={!user ? <Login1/> : <Navigate to="/"/>} />
+              <Route
+                exact
+                path="/login"
+                element={!user ? <Login1 /> : <Navigate to="/" />}
+              />
             </Routes>
           </div>
         </div>
       </div>
+
+      
+
     </div>
   );
 }
