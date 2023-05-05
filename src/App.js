@@ -11,10 +11,13 @@ import Navbar from "./Components/Navbar";
 import Ranking from "./Pages/Ranking";
 import Login from "./Pages/Login";
 import Login1 from "./Pages/Login1";
+import Portfolio from "./Pages/Portfolio";
 import { UseAuthContext } from "./Hooks/UseAuthContext";
 import { ToastContainer } from "react-toastify";
 import DesktopNavbar from "./Components/DesktopNavbar";
 import Footer from "./Components/Footer";
+import OurTeam from "./Pages/OurTeam";
+import Rules from "./Pages/Rules";
 
 function App() {
   const { user } = UseAuthContext();
@@ -82,6 +85,13 @@ function App() {
                 path="/login"
                 element={!user ? <Login1 /> : <Navigate to="/" />}
               />
+              <Route
+                exact
+                path="/portfolio"
+                element={user ? <Portfolio /> : <Navigate to="/login" />}
+              />
+              <Route exact path="/team" element={<OurTeam />} />
+              <Route exact path="/rules" element={<Rules />} />
             </Routes>
           </div>
         </div>

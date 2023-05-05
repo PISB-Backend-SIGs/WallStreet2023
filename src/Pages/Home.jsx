@@ -1,33 +1,51 @@
 import React from "react";
-
 import Lottie from "lottie-react";
 import animationData from "../Lottie/114986-ultimate-trading-experience.json";
-import {UseAuthContext} from "../Hooks/UseAuthContext";
+import { UseAuthContext } from "../Hooks/UseAuthContext";
+import { NavLink } from "react-router-dom";
+import Footer from "../Components/Footer"
 
 const Home = () => {
-
-  const {user} = UseAuthContext()
+  const { user } = UseAuthContext();
+  
+  const css = (user) ? "homepageLogin" : "homepage"
 
   return (
-    <div className="homepage">
+    <div className={css}>
       <div>
         <section id="intro">
           <div className="container-lg">
+
             <div className="row justify-content-center align-items-center">
               <div className="col-md-5 text-center text-md-start order-2 order-md-1 text-light">
                 <h2 className="mb-1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  gravida ante vel eros ullamcorper, euismod bibendum velit
-                  lacinia.
+                  Interested in learning about the stock market and improving
+                  your investment skills? Well you are in luck, as we bring you,
+                  'Wall Street'
                   <br />
                 </h2>
-                <h4 className="fw-lighter mb-5 mt-5 text-secondary">
-                  Lorem ipsum dolor sit amet, consectetur
+                <h4 className="fw-lighter mt-5 text-secondary">
+                  The stock market is a device for transferring money from the
+                  impatient to the patient
                 </h4>
+                <h4 className="fw-lighter mb-5 text-secondary">
+                  - Warren Buffett
+                </h4>
+
+                {!user && <NavLink exact to='/login' className="text-decoration-none">
                 <btn className=" h5 align-items-center align-items-sm-start mt-5 mt-auto logoutbtn py-2 px-3">
                   {" "}
                   Get Started
                 </btn>
+                </NavLink>}
+
+                {user && <NavLink exact to='/rules' className="text-decoration-none">
+                <btn className=" h5 align-items-center align-items-sm-start mt-5 mt-auto logoutbtn py-2 px-3">
+                  {" "}
+                  See Rules
+                </btn>
+                </NavLink>}
+
               </div>
 
               <div className="col-md-5 text-center order-1 order-md-2 ms-md-5 mb-5 illustration">
@@ -39,9 +57,27 @@ const Home = () => {
                 />
               </div>
             </div>
+
+            
+
           </div>
         </section>
       </div>
+
+      <div className="d-block d-sm-none">
+        <br />
+        <br />
+      </div>
+
+      <div>
+            <footer className="fixed-bottom footerlogin">
+                <div className="container text-center">
+                    <NavLink className="text-decoration-none" to='/team'><p className="mb-0 text-light">Designed & developed by - Web Team</p></NavLink>
+                </div>
+            </footer>
+
+        </div>
+
     </div>
   );
 };
