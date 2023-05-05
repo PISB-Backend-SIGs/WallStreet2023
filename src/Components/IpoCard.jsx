@@ -3,7 +3,6 @@ import Modal from "../Components/Modal";
 
 const IpoCard = ({
   id,
-  company_name,
   company,
   high_cap,
   low_cap,
@@ -34,7 +33,7 @@ const IpoCard = ({
         <div className="row row-cols-2 row-cols-sm-4 g-4 align-items-center">
           <div className="col text-start text-sm-center">
             <p className="card-text" style={{ fontWeight: "bold" }}>
-              {company_name}
+              {company.company_name}
             </p>
           </div>
           <div className="col text-end text-sm-center">
@@ -55,8 +54,9 @@ const IpoCard = ({
               {/* MODAL */}
               <Modal
                 id={id}
-                company={company}
-                company_name={company_name}
+                company={company.id}
+                company_name={company.company_name}
+                short_name={company.short_name}
                 high_cap={high_cap}
                 low_cap={low_cap}
                 lot_allowed={lot_allowed}

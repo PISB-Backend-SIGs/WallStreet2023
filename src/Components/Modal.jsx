@@ -1,14 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import { UseAuthContext } from "../Hooks/UseAuthContext";
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { subscribeIpo } from "../Utils/Apis";
 
 const Modal = ({
   id,
   company,
   company_name,
+  short_name,
   high_cap,
   low_cap,
   lot_allowed,
@@ -16,35 +17,34 @@ const Modal = ({
   red_herring_prospectus,
   description,
 }) => {
-
-  const { user } = UseAuthContext()
+  const { user } = UseAuthContext();
   const [qty, setQty] = useState(0);
   const [bid, setBid] = useState(0);
 
   const handleSubscribe = (e) => {
-    e.preventDefault()
-    if(!user){
-      toast.error('You must be logged in to perform this action', {
+    e.preventDefault();
+    if (!user) {
+      toast.error("You must be logged in to perform this action", {
         position: toast.POSITION.TOP_RIGHT,
         theme: "dark",
-      })
-    }else{
+      });
+    } else {
       const data = {
         company: company,
         quantity: qty,
-        offer_bid: bid
-      }
+        offer_bid: bid,
+      };
       subscribeIpo(data)
-      .then((response) => {
-        toast.success('Ipo subscribed successfully')
-        return response.data;
-      })
-      .catch((error) => {
-        console.error(error);
-        toast.error('Error occured')
-      });
+        .then((response) => {
+          toast.success("Ipo subscribed successfully");
+          return response.data;
+        })
+        .catch((error) => {
+          console.error(error);
+          toast.error("Error occured");
+        });
     }
-  }
+  };
 
   return (
     <div
@@ -59,7 +59,7 @@ const Modal = ({
         <div className="ipoModal modal-content">
           <div className="modal-header mt-3 border-0">
             <h3 className="modaltitle text-center" id="exampleModalLabel">
-              {company_name}
+              {short_name} - {company_name}
             </h3>
 
             <div
@@ -83,18 +83,29 @@ const Modal = ({
                     {low_cap}-{high_cap}
                   </p>
 
-                  <p className="mb-0 ipodetailtitle mt-4">Quantity</p>
+                  <p className="mb-0 ipodetailtitle mt-4">Offer bid</p>
                   <div>
-                    <input className="stockquantity mt-1" type="number" onChange={(e) => setQty(e.target.value)} value={qty}/>
+                    <input
+                      className="stockquantity mt-1"
+                      type="number"
+                      onChange={(e) => setBid(e.target.value)}
+                      value={bid}
+                    />
                   </div>
                 </div>
+
                 <div className="col-6 text-end ">
                   <p className="mb-0 ipodetailtitle mt-2">Avl. qty</p>
                   <p className="mt-0">{total_volume}</p>
 
-                  <p className="mb-0 ipodetailtitle mt-4">Offer bid</p>
+                  <p className="mb-0 ipodetailtitle mt-4">Quantity</p>
                   <div>
-                    <input className="stockquantity mt-1" type="number" onChange={(e) => setBid(e.target.value)} value={bid}/>
+                    <input
+                      className="stockquantity mt-1"
+                      type="number"
+                      onChange={(e) => setQty(e.target.value)}
+                      value={qty}
+                    />
                   </div>
                 </div>
               </div>
@@ -109,7 +120,11 @@ const Modal = ({
               {" "}
               View Report{" "}
             </button>
-            <button type="button" className="btn btn-success mx-3 mb-4" onClick={handleSubscribe}>
+            <button
+              type="button"
+              className="btn btn-success mx-3 mb-4"
+              onClick={handleSubscribe}
+            >
               Subscribe
             </button>
           </div>
