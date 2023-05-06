@@ -18,6 +18,7 @@ import DesktopNavbar from "./Components/DesktopNavbar";
 import Footer from "./Components/Footer";
 import OurTeam from "./Pages/OurTeam";
 import Rules from "./Pages/Rules";
+import CommingSoon from "./Pages/CommingSoon";
 
 function App() {
   const { user } = UseAuthContext();
@@ -92,6 +93,7 @@ function App() {
               />
               <Route exact path="/team" element={<OurTeam />} />
               <Route exact path="/rules" element={<Rules />} />
+              <Route exact path="/comingsoon" element={<CommingSoon />} />
             </Routes>
           </div>
         </div>

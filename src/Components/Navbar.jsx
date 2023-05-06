@@ -4,8 +4,9 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
+
       <nav
-        class="navbar navbar-expand-lg navbar-light"
+        class="navbar navbar-expand-lg navbar-dark"
         style={{ backgroundColor: "#33333d" }}
       >
         <div class="container-fluid">
@@ -14,9 +15,11 @@ const Navbar = () => {
               href="/"
               className="d-flex align-items-center mb-md-0 me-md-auto text-decoration-none"
             >
-              <span className="bi bi-graph-up title"> Wall Street </span>
+              <div className="bi bi-graph-up title"> Wall Street </div>
+              
             </a>
           </div>
+
           <button
             class="navbar-toggler"
             type="button"
@@ -26,17 +29,17 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <div class="navbar-toggler-icon"></div>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse mt-1" id="navbarSupportedContent">
             <div>
               {/* <!-- Side Bar --> */}
-              <div className="d-flex flex-column align-items-center align-items-sm-center px-3 pt-5 text-white min-vh-100 sidebar">
+              <div className="d-flex flex-column align-items-center align-items-sm-center text-white Navbar">
                 {/* <!-- Title  --> */}
 
                 {/* <!-- Nav items list --> */}
                 <ul
-                  className="nav nav-pills flex-column mb-0 align-items-center align-items-sm-start my-auto"
+                  className="nav nav-pills flex-column mb-0 align-items-center align-items-sm-start mt-4"
                   id="menu"
                 >
                   <li className="nav-item">
@@ -81,7 +84,7 @@ const Navbar = () => {
                   <li className="nav-item">
                     <NavLink
                       exact
-                      to="#"
+                      to="portfolio"
                       className="nav-link align-middle px-0 py-4"
                     >
                       <span className="bi bi-bar-chart navitems h3 bi bi-pie-chart">
@@ -103,13 +106,25 @@ const Navbar = () => {
                       </span>
                     </NavLink>
                   </li>
-                </ul>
 
-                <btn className="bi bi-bar-chart h5 bi bi-box-arrow-left align-items-center align-items-sm-start my-4 mt-auto logoutbtn py-2 px-3">
+                  <li className="nav-item">
+                    <NavLink
+                      exact
+                      to="/rules"
+                      className="nav-link align-middle px-0 py-4"
+                    >
+                      <span className="bi bi-bar-chart navitems h3 bi bi-file-earmark-ruled">
+                        {" "}
+                        Rules
+                      </span>
+                    </NavLink>
+                  </li>
+
+                  <btn className="bi bi-bar-chart h5 bi bi-box-arrow-left align-items-center align-items-sm-start my-5 mt-5 logoutbtn py-2 px-3">
                   {" "}
                   Logout
                 </btn>
-
+                </ul>
                 <hr />
               </div>
             </div>
