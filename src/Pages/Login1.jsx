@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { UseLogin } from "../Hooks/UseLogin";
+import {toast} from 'react-toastify';
+
 
 const Login1 = () => {
 
@@ -10,7 +12,17 @@ const Login1 = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(username, password);
+    if(isLoading){
+      toast.info("Processing")
+    }
+    if(error){
+      toast.error("Error occured")
+    }
+    if(!isLoading && !error){
+      await login(username, password);
+      toast.success("Logged in successfully !")
+    }
+    
   };
 
   return (
