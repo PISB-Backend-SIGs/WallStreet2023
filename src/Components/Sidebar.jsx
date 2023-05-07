@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { UseAuthContext } from "../Hooks/UseAuthContext";
 import { UseLogout } from "../Hooks/UseLogout";
+import image from "../Images/stockwhite.svg"
 
 const Sidebar = () => {
 
@@ -21,8 +22,13 @@ const Sidebar = () => {
           <NavLink
             to="/"
             className="d-flex align-items-center mb-md-0 me-md-auto text-decoration-none"
-          >
-            <span className="bi bi-graph-up title"> Wall Street </span>
+          > 
+
+          <div>
+            <img src={image} alt="" id="logo"/>
+            <span className="title">Wall Street </span>
+          </div>
+            
           </NavLink>
         </div>
 

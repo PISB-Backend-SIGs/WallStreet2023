@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import image from "../Images/stockwhite.svg"
 
 const DesktopNavbar = () => {
   return (
@@ -10,7 +11,10 @@ const DesktopNavbar = () => {
             <div className="container">
 
               <NavLink to="/" className="navbar-brand">
-                <span className="navbartitle"> Wallstreet </span>
+                <div>
+                  <img src={image} alt="" id="logo"/>
+                  <span className="navbartitle"> Wallstreet </span>
+                </div>
               </NavLink>
 
               <button
