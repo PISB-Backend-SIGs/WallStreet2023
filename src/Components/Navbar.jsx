@@ -109,7 +109,7 @@ const Navbar = () => {
                     </NavLink>
                   </li>}
 
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <NavLink
                       exact
                       to="/ranking"
@@ -120,7 +120,7 @@ const Navbar = () => {
                         Ranking
                       </span>
                     </NavLink>
-                  </li>
+                  </li> */}
 
                   <li className="nav-item">
                     <NavLink

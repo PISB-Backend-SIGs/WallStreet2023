@@ -57,7 +57,7 @@ function App() {
               <Route
                 exact
                 path="/news"
-                element={user ? <News /> : <Navigate to="/login" />}
+                element={user ? <CommingSoon /> : <Navigate to="/login" />}
               />
               <Route
                 exact

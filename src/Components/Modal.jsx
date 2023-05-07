@@ -111,6 +111,7 @@ const Modal = ({
               </div>
             </div>
           </div>
+          <div className="text-warning mb-3">[One lot is equal to 25 shares, hence your total transaction value will be ]</div>
           <div className="modal-footer border-0 align-items-center">
             <button
               type="button"

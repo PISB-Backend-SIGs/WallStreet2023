@@ -85,7 +85,7 @@ const IpoCard = ({
                   description={`${description.slice(
                     0,
                     1000
-                  )}... (for more details click on view report)`}
+                  )}...`}
                 />
               </div>
             </div>

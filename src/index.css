@@ -279,8 +279,11 @@ body {
 .stockquantity{
   width: 80px;
   padding: 2px;
+  margin-bottom: -80px;
 }
-
+.note{
+  margin-bottom: 10px;
+}
 .modal-footer{
   justify-content: center;
 }

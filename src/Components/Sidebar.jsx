@@ -81,7 +81,7 @@ const Sidebar = () => {
             </NavLink>
           </li>}
 
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink
               exact
               to="/ranking"
@@ -90,7 +90,7 @@ const Sidebar = () => {
               {" "}
               Ranking
             </NavLink>
-          </li>
+          </li> */}
         </ul>
 
         <btn className="bi bi-bar-chart h5 bi bi-box-arrow-left align-items-center align-items-sm-start my-4 mt-auto logoutbtn py-2 px-3" onClick={handleLogout}>
