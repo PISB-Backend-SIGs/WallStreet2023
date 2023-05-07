@@ -23,7 +23,9 @@
 .title {
   color: #5eb5f8;
   font-size: 29px;
+  white-space: nowrap;
 }
+
 
 .navitems {
   color: #676976;
@@ -398,6 +400,14 @@ h1 {
   font-size: 3rem;
   color: #333;
   text-align: center;
+}
+
+#logo{
+  display: block;
+  float: left;
+  width:36px;
+  height: 36px;
+  margin-right:5px;
 }
 
 
