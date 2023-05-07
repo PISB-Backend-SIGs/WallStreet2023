@@ -365,7 +365,7 @@ section{
 /* Navbar fixes */
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  color: #fff;
+  color: #ffffff;
   background-color: #33333d;
 }
 

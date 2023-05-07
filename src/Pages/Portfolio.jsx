@@ -12,7 +12,7 @@ const Portfolio = () => {
 
           <div className="container">
             <div
-              className="card mx-auto shadow"
+              className="card mx-sm-auto mx-3 shadow"
               style={{
                 backgroundColor: "#3d3d4c",
                 color: "#fefdff",

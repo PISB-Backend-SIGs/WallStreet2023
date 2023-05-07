@@ -42,7 +42,7 @@ const Ipo = () => {
       />
       )}
 
-      <div className="row row-cols-1 g-4 g-sm-3">
+      <div className="row row-cols-1 g-4 g-sm-3 mx-sm-auto mx-0">
         {ipos &&
           (<>
             {ipos.map((ipo) => {

@@ -5,7 +5,7 @@ const RankCard = ({id, rank, user_name, net_worth}) => {
   return (
     <div className="container">
       <div
-        className="card mx-auto shadow"
+        className="card mx-ms-auto mx-3 shadow"
         style={{ backgroundColor: "#3d3d4c", color: "#fefdff" }}
       >
         <div className="card-body" style={{ padding: "12px" }}>
