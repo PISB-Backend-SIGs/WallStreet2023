@@ -1,23 +1,30 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { UseAuthContext } from "../Hooks/UseAuthContext";
+import { UseLogout } from "../Hooks/UseLogout";
 
 const Navbar = () => {
+  const { user } = UseAuthContext();
+  const { logout } = UseLogout();
+
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
     <>
-
       <nav
         class="navbar navbar-expand-lg navbar-dark"
         style={{ backgroundColor: "#33333d" }}
       >
         <div class="container-fluid">
           <div className="d-flex flex-row">
-            <a
-              href="/"
+            <NavLink
+              to="/"
               className="d-flex align-items-center mb-md-0 me-md-auto text-decoration-none"
             >
               <div className="bi bi-graph-up title"> Wall Street </div>
-              
-            </a>
+            </NavLink>
           </div>
 
           <button
@@ -31,7 +38,10 @@ const Navbar = () => {
           >
             <div class="navbar-toggler-icon"></div>
           </button>
-          <div class="collapse navbar-collapse mt-1" id="navbarSupportedContent">
+          <div
+            class="collapse navbar-collapse mt-1"
+            id="navbarSupportedContent"
+          >
             <div>
               {/* <!-- Side Bar --> */}
               <div className="d-flex flex-column align-items-center align-items-sm-center text-white Navbar">
@@ -42,7 +52,8 @@ const Navbar = () => {
                   className="nav nav-pills flex-column mb-0 align-items-center align-items-sm-start mt-4"
                   id="menu"
                 >
-                  <li className="nav-item">
+                  
+                  {user && <li className="nav-item">
                     <NavLink
                       exact
                       to="/stocks"
@@ -53,9 +64,9 @@ const Navbar = () => {
                         Stocks{" "}
                       </span>
                     </NavLink>
-                  </li>
+                  </li>}
 
-                  <li className="nav-item">
+                  {user && <li className="nav-item">
                     <NavLink
                       exact
                       to="/news"
@@ -66,7 +77,7 @@ const Navbar = () => {
                         News
                       </span>
                     </NavLink>
-                  </li>
+                  </li>}
 
                   <li className="nav-item">
                     <NavLink
@@ -81,7 +92,7 @@ const Navbar = () => {
                     </NavLink>
                   </li>
 
-                  <li className="nav-item">
+                  {user && <li className="nav-item">
                     <NavLink
                       exact
                       to="portfolio"
@@ -92,7 +103,7 @@ const Navbar = () => {
                         Portfolio
                       </span>
                     </NavLink>
-                  </li>
+                  </li>}
 
                   <li className="nav-item">
                     <NavLink
@@ -120,10 +131,24 @@ const Navbar = () => {
                     </NavLink>
                   </li>
 
-                  <btn className="bi bi-bar-chart h5 bi bi-box-arrow-left align-items-center align-items-sm-start my-5 mt-5 logoutbtn py-2 px-3">
-                  {" "}
-                  Logout
-                </btn>
+                  {!user && <li className="nav-item">
+                    <NavLink
+                      exact
+                      to="/login"
+                      className="nav-link align-middle px-0 py-4"
+                    >
+                      <span className="bi bi-box-arrow-in-right navitems h3">
+                        {" "}
+                        Login
+                      </span>
+                    </NavLink>
+                  </li>}
+
+                  {user && <btn className="h5 bi bi-box-arrow-left align-items-center align-items-sm-start my-5 mt-5 logoutbtn py-2 px-3" onClick={handleLogout}>
+                    {" "}
+                    Logout
+                  </btn>}
+
                 </ul>
                 <hr />
               </div>
