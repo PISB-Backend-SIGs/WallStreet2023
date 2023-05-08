@@ -1,8 +1,8 @@
 import axiosInstance from "./AxiosConfig";
 import axios from "axios";
-import {toast} from 'react-toastify';
+import { toast } from "react-toastify";
 
-const API_URL = "http://127.0.0.1:8000/api";
+const API_URL = "https://api.wallstreet.credenz.in/api";
 
 export const getAllIpo = () => {
   return axios
@@ -16,6 +16,9 @@ export const getAllIpo = () => {
 };
 
 export const subscribeIpo = (data) => {
-  return axiosInstance
-    .post("/IPOAddSub/", data)
+  return axiosInstance.post("/IPOAddSub/", data);
+};
+
+export const ipoPortfolio = () => {
+  return axiosInstance.get("/IPOSub/");
 };

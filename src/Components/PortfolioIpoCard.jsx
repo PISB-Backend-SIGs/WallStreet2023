@@ -1,6 +1,10 @@
 import React from "react";
 
-const PortfolioIpoCard = () => {
+const PortfolioIpoCard = ({
+  company,
+  quantity,
+  offer_bid,
+}) => {
   return (
     <div>
       <div className="container">
@@ -10,9 +14,9 @@ const PortfolioIpoCard = () => {
         >
           <div className="card-body" style={{ padding: "12px" }}>
             <div className="d-flex justify-content-around">
-              <div className="">Company</div>
-              <div>No of Lots</div>
-              <div>Amt</div>
+              <div className="">{company}</div>
+              <div>{quantity}</div>
+              <div>{offer_bid}</div>
             </div>
           </div>
         </div>
