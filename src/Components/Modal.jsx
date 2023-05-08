@@ -12,7 +12,7 @@ const Modal = ({
   short_name,
   high_cap,
   low_cap,
-  lot_allowed,
+  lot_size,
   total_volume,
   red_herring_prospectus,
   description,
@@ -80,7 +80,7 @@ const Modal = ({
                 <div className="col-6">
                   <p className="mb-0 ipodetailtitle mt-2">Price Band</p>
                   <p className="mt-0">
-                    {low_cap}-{high_cap}
+                   ₹{low_cap}-₹{high_cap}
                   </p>
 
                   <p className="mb-0 ipodetailtitle mt-4">Offer bid</p>
@@ -111,7 +111,7 @@ const Modal = ({
               </div>
             </div>
           </div>
-          <div className="text-warning mb-3">[One lot is equal to 25 shares, hence your total transaction value will be {qty*bid} ]</div>
+          <div className="text-warning mb-3">{`[One lot is equal to ${lot_size} shares, hence your total transaction value will be ₹${qty*bid*lot_size}]`}</div>
           <div className="modal-footer border-0 align-items-center">
             <button
               type="button"

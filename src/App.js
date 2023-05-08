@@ -22,7 +22,7 @@ import CommingSoon from "./Pages/CommingSoon";
 
 function App() {
   const { user } = UseAuthContext();
-  const css = (user) ? "col-md-9 col-xl-10 col-12 content" : "col-12 content"
+  const css = user ? "col-md-9 col-xl-10 col-12 content" : "col-12 content";
 
   return (
     <div>
@@ -33,22 +33,22 @@ function App() {
         <Navbar />
       </div>
 
-
       {/* DESKTOP NAVBAR */}
-      <div className="d-none d-sm-block">
-        {!user && <DesktopNavbar/>}
-      </div>
+      <div className="d-none d-sm-block">{!user && <DesktopNavbar />}</div>
 
-      {!user && <Footer/>}
+      {!user && <Footer />}
 
       <div className={`container-fluid`}>
         <div className="row flex-nowrap">
-
           {/* Sidebar */}
-          {user && <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0 position-fixed">
-            <Sidebar />
-          </div>}
-          {user && <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0"></div>}
+          {user && (
+            <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0 position-fixed">
+              <Sidebar />
+            </div>
+          )}
+          {user && (
+            <div className="d-none d-sm-block col-0 col-md-3 col-xl-2 px-0"></div>
+          )}
 
           {/* All content */}
           <div className={css}>
@@ -98,9 +98,6 @@ function App() {
           </div>
         </div>
       </div>
-
-      
-
     </div>
   );
 }

@@ -6,7 +6,7 @@ const IpoCard = ({
   company,
   high_cap,
   low_cap,
-  lot_allowed,
+  lot_size,
   total_volume,
   release_date,
   closing_date,
@@ -79,7 +79,7 @@ const IpoCard = ({
                   short_name={company.short_name}
                   high_cap={high_cap}
                   low_cap={low_cap}
-                  lot_allowed={lot_allowed}
+                  lot_size={lot_size}
                   total_volume={total_volume}
                   red_herring_prospectus={red_herring_prospectus}
                   description={`${description.slice(
@@ -126,7 +126,7 @@ const IpoCard = ({
                   short_name={company.short_name}
                   high_cap={high_cap}
                   low_cap={low_cap}
-                  lot_allowed={lot_allowed}
+                  lot_size={lot_size}
                   total_volume={total_volume}
                   red_herring_prospectus={red_herring_prospectus}
                   description={`${description.slice(
