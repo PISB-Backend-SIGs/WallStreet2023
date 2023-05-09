@@ -148,6 +148,18 @@ const Navbar = () => {
                     </NavLink>
                   </li>}
 
+                  {user && <li className="nav-item">
+                    <p
+                      className="align-middle px-0 py-4"
+                    >
+                      <span className="bi bi-wallet navitemwallet h3 bi bi-clipboard-data">
+                        {" "}
+                        ₹1,00,00,000
+                      </span>
+                    </p>
+                  </li>}
+
+
                   {user && <btn className="h5 bi bi-box-arrow-left align-items-center align-items-sm-start my-5 mt-5 logoutbtn py-2 px-3" onClick={handleLogout}>
                     {" "}
                     Logout

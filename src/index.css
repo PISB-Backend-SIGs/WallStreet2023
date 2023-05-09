@@ -36,7 +36,12 @@
   font-size: 26px;
   text-decoration: none;
 }
-
+.navitemwallet {
+  color: #676976;
+  transition: 0.4s;
+  font-size: 26px;
+  text-decoration: none;
+}
 .navitems:focus {
   color: #fefdff;
 }

@@ -7,7 +7,7 @@ import image from "../Images/stockwhite.svg"
 const Sidebar = () => {
 
   const { user } = UseAuthContext()
-  const {logout} = UseLogout()
+  const { logout } = UseLogout()
 
   const handleLogout = () => {
     logout()
@@ -22,13 +22,13 @@ const Sidebar = () => {
           <NavLink
             to="/"
             className="d-flex align-items-center mb-md-0 me-md-auto text-decoration-none"
-          > 
+          >
 
-          <div>
-            <img src={image} alt="" id="logo"/>
-            <span className="desktoptitle">Wall Street </span>
-          </div>
-            
+            <div>
+              <img src={image} alt="" id="logo" />
+              <span className="desktoptitle">Wall Street </span>
+            </div>
+
           </NavLink>
         </div>
 
@@ -91,6 +91,18 @@ const Sidebar = () => {
               Ranking
             </NavLink>
           </li> */}
+
+          {user && <li className="nav-item">
+            <p
+              className="align-middle px-0 py-4"
+            >
+              <span className="bi bi-wallet navitemwallet h3 bi bi-clipboard-data">
+                {" "}
+                ₹1,00,00,000
+              </span>
+            </p>
+          </li>}
+
         </ul>
 
         <btn className="bi bi-bar-chart h5 bi bi-box-arrow-left align-items-center align-items-sm-start my-4 mt-auto logoutbtn py-2 px-3" onClick={handleLogout}>
