@@ -26,7 +26,7 @@ const Sidebar = () => {
 
           <div>
             <img src={image} alt="" id="logo"/>
-            <span className="title">Wall Street </span>
+            <span className="desktoptitle">Wall Street </span>
           </div>
             
           </NavLink>

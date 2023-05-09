@@ -26,7 +26,7 @@ const Navbar = () => {
             >
               <div>
                 <img src={image} alt="" id="logo"/>
-                <div className="title"> Wall Street </div>
+                <div className="desktoptitle"> Wall Street </div>
               </div>
             </NavLink>
           </div>
