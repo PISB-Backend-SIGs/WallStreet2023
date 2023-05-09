@@ -74,7 +74,7 @@ const IpoCard = ({
                 {/* MODAL */}
                 <Modal
                   id={id}
-                  company={company.id}
+                  company={company.company_id}
                   company_name={company.company_name}
                   short_name={company.short_name}
                   high_cap={high_cap}
@@ -121,7 +121,7 @@ const IpoCard = ({
                 {/* MODAL */}
                 <Modal
                   id={id}
-                  company={company.id}
+                  company={company.company_id}
                   company_name={company.company_name}
                   short_name={company.short_name}
                   high_cap={high_cap}
