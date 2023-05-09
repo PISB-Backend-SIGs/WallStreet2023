@@ -25,8 +25,11 @@
   font-size: 29px;
   white-space: nowrap;
 }
-
-
+.desktoptitle {
+  color: #fefdff;
+  font-size: 29px;
+  white-space: nowrap;
+}
 .navitems {
   color: #676976;
   transition: 0.4s;

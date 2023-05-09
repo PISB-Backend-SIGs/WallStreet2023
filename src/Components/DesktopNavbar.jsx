@@ -13,7 +13,7 @@ const DesktopNavbar = () => {
               <NavLink to="/" className="navbar-brand">
                 <div>
                   <img src={image} alt="" id="logo"/>
-                  <span className="navbartitle"> Wallstreet </span>
+                  <span className="desktoptitle"> Wallstreet </span>
                 </div>
               </NavLink>
 
