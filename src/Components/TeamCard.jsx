@@ -1,7 +1,8 @@
+import { color } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TeamCard = ({ id, src, name,linkedInId }) => {
+const TeamCard = ({ id, src, name, linkedInId, githubId }) => {
   return (
     <div>
       <div className="container">
@@ -12,7 +13,7 @@ const TeamCard = ({ id, src, name,linkedInId }) => {
             style={{ backgroundColor: "#3d3d4d", borderRadius: "10px" }}
           >
             {/* card body */}
-            <div class="card-body">
+            <div class="card-body" style={{ marginBottom: "-20px" }}>
               <img
                 class="card-img-top "
                 src={src}
@@ -21,9 +22,23 @@ const TeamCard = ({ id, src, name,linkedInId }) => {
               />
               <div class="card-body">
 
-                <a href={linkedInId} target="_blank" class="branch-text col-md-4" rel="noreferrer">
-                  <h5 class="card-title text-center text-light mb-0 mt-2">{name}</h5>
-                </a>
+
+                <h5 class="card-title text-center text-light mb-0 mt-2">{name}</h5>
+
+
+                <div className="d-flex justify-content-center text-light mt-3 mb-0 justify-content-around mx-5 px-4">
+
+                  <a href={linkedInId} target="_blank" class="branch-text col-md-4 text-decoration-none" rel="noreferrer">
+                    <div className="bi bi-linkedin mx-0 text-light" style={
+                      {fontSize: "22px"}}></div>
+                  </a>
+
+                  <a href={githubId} target="_blank" class="branch-text col-md-4 text-decoration-none" rel="noreferrer">
+                    <div className="bi bi-github mx-0 text-light" style={
+                      {fontSize: "22px"}}></div>
+                  </a>
+
+                </div>
 
               </div>
             </div>
