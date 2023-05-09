@@ -30,7 +30,7 @@ export const UseLogin = () => {
           
           if (localResponse.ok) {
             const data = await localResponse.json();
-            console.log(data)
+            // console.log(data)
             localStorage.setItem('user', JSON.stringify(data))
             dispatch({type: 'LOGIN', payload: data})
             setIsLoading(false)
@@ -58,7 +58,7 @@ export const UseLogin = () => {
             });
             if (createUserResponse.ok) {
               const createUserData = await createUserResponse.json();
-              console.log(createUserData);
+            //   console.log(createUserData);
               const localResponse = await fetch(localLoginUrl, {
                 method: 'POST',
                 body: JSON.stringify({ username, password}),
@@ -66,14 +66,14 @@ export const UseLogin = () => {
               })
 
             const data = await localResponse.json();
-            console.log(data)
+            // console.log(data)
             localStorage.setItem('user', JSON.stringify(data))
             dispatch({type: 'LOGIN', payload: data})
             setIsLoading(false)
             setError(null)
             return data.auth_token
             } else {
-              console.log(data);
+            //   console.log(data);
               setIsLoading(false)
               setError(data.detail)
               return 'Invalid credentials';
@@ -81,7 +81,7 @@ export const UseLogin = () => {
           } else {
             // Login failed in both databases.
             const data = await remoteResponse.json();
-            console.log(data);
+            // console.log(data);
             setIsLoading(false)
             setError(data.detail)
             return 'Invalid credentials';

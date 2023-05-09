@@ -18,7 +18,6 @@ const Login1 = () => {
     if(error){
       toast.error("Error occured")
     }
-    console.log(error);
     if(!isLoading && !error){
       await login(username, password);
       toast.success("Logged in successfully !")
