@@ -9,7 +9,6 @@ import IpoDetail from "../src/Pages/IpoDetail";
 import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
 import Ranking from "./Pages/Ranking";
-import Login from "./Pages/Login";
 import Login1 from "./Pages/Login1";
 import Portfolio from "./Pages/Portfolio";
 import { UseAuthContext } from "./Hooks/UseAuthContext";
