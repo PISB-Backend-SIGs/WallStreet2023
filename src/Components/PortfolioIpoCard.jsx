@@ -14,7 +14,7 @@ const PortfolioIpoCard = ({
         >
           <div className="card-body" style={{ padding: "12px" }}>
             <div className="d-flex justify-content-around">
-              <div className="">{company}</div>
+              <div className="">{company.company_name}</div>
               <div>{quantity}</div>
               <div>{offer_bid}</div>
             </div>
