@@ -70,7 +70,7 @@ const Home = () => {
 
       {user && (
         <div>
-          <footer className="fixed-bottom footer">
+          <footer className="fixed-bottom footerhome">
                 <div className="container text-center d-flex justify-content-center">
                     <p className="mb-0 text-light" style={{marginRight:"5px"}}>Designed & developed by -</p>
                     <NavLink className="text-decoration-none" to='/team'><p className="mb-0 text-light"> {" "} <u> Web Team</u> </p></NavLink>
