@@ -27,10 +27,10 @@ export const UseLogin = () => {
             body: JSON.stringify({ username, password}),
             headers: { 'Content-Type': 'application/json' }
           });
-          
+          console.log(localResponse)
           if (localResponse.ok) {
             const data = await localResponse.json();
-            // console.log(data)
+            console.log(data)
             localStorage.setItem('user', JSON.stringify(data))
             dispatch({type: 'LOGIN', payload: data})
             setIsLoading(false)
@@ -76,6 +76,7 @@ export const UseLogin = () => {
             //   console.log(data);
               setIsLoading(false)
               setError(data.detail)
+              console.log(data.detail)
               return 'Invalid credentials';
             }
           } else {
@@ -84,6 +85,7 @@ export const UseLogin = () => {
             // console.log(data);
             setIsLoading(false)
             setError(data.detail)
+            console.log(data.detail)
             return 'Invalid credentials';
           }
 
