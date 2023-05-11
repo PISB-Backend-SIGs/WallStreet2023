@@ -4,6 +4,7 @@ import {Data} from '../Utils/Data'
 import LineChart from '../Components/LineChart'
 import { CategoryScale } from 'chart.js'
 import Chart from 'chart.js/auto'
+import BuyModal from "../Components/BuyModal"
 
 Chart.register(CategoryScale);
 
@@ -49,9 +50,11 @@ const StocksDetail = () => {
       {/* Buy/Sell  */}
       <div className='row'>
         <div className='col-6 text-end px-4'>
-          <button className="btn btnbuysell btn-success fs-5 py-1 bold-text">
+          <button className="btn btnbuysell btn-success fs-5 py-1 bold-text" data-toggle="modal"
+                data-target="#buymodal">
             Buy
           </button>
+          <BuyModal/>
         </div>
         <div className='col-6 text-start px-4'>
           <button className="btn btnbuysell btn-danger fs-5 py-1">

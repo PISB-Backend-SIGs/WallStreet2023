@@ -305,9 +305,11 @@ body {
 .modal-footer{
   justify-content: center;
 }
-
 .modal{
   text-align:center;
+}
+.buyModal{
+  background-color : #3d3d4d;
 }
 
 
@@ -492,3 +494,11 @@ a{
     color : #fefdff;
   }
 }
+
+@media only screen and (min-width: 576px){
+  .buyModal{
+    margin-left: 20vh;
+    margin-right: 20vh;
+  }
+}
+

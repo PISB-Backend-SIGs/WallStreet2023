@@ -22,3 +22,11 @@ export const subscribeIpo = (data) => {
 export const ipoPortfolio = () => {
   return axiosInstance.get("/IPOSub/");
 };
+
+export const placeBuyOrder = (data) => {
+  return axiosInstance.post("/AddBuyOrders/", data);
+};
+
+export const getAllStocks = () => {
+  return axiosInstance.get("/company/");
+};
