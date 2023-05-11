@@ -56,7 +56,7 @@ function App() {
               <Route
                 exact
                 path="/news"
-                element={user ? <CommingSoon /> : <Navigate to="/login" />}
+                element={user ? <News /> : <Navigate to="/login" />}
               />
               <Route
                 exact
@@ -66,7 +66,7 @@ function App() {
               <Route
                 exact
                 path="/stocks"
-                element={user ? <CommingSoon /> : <Navigate to="/login" />}
+                element={user ? <Stocks /> : <Navigate to="/login" />}
               />
               <Route
                 exact
