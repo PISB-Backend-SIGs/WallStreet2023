@@ -27,6 +27,10 @@ export const placeBuyOrder = (data) => {
   return axiosInstance.post("/AddBuyOrders/", data);
 };
 
+export const placeSellOrder = (data) => {
+  return axiosInstance.post("/AddSellOrders/", data);
+};
+
 export const getAllStocks = () => {
   return axiosInstance.get("/company/");
 };

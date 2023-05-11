@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { placeBuyOrder } from "../Utils/Apis";
+import { placeSellOrder } from "../Utils/Apis";
 import { toast } from "react-toastify";
 
-const BuyModal = ({ id, short_name, company_name }) => {
+const SellModal = ({ id, short_name, company_name }) => {
   const [qty, setQty] = useState(0);
-  const [bid, setBid] = useState(0);
+  const [sell, setSell] = useState(0);
 
   const handleBuy = (e) => {
     e.preventDefault();
@@ -13,12 +13,12 @@ const BuyModal = ({ id, short_name, company_name }) => {
     const data = {
       company: id,
       quantity: qty,
-      bid_price: bid,
+      ask_price: sell,
     };
-    placeBuyOrder(data)
+    placeSellOrder(data)
       .then((response) => {
         toast.update(tid, {
-          render: "Buy order placed successfully !",
+          render: "Sell order placed successfully !",
           type: "success",
           isLoading: false,
           autoClose: 5000,
@@ -38,7 +38,7 @@ const BuyModal = ({ id, short_name, company_name }) => {
     <div>
       <div
         className="modal fade"
-        id={`modal${id}`}
+        id={`sellmodal${id}`}
         tabindex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
@@ -70,12 +70,12 @@ const BuyModal = ({ id, short_name, company_name }) => {
               <div className="details m-3 mt-0 ">
                 <div className="row">
                   <div className="col-6">
-                    <p className="mb-0 ipodetailtitle mt-3">Bid Price</p>
+                    <p className="mb-0 ipodetailtitle mt-3">Sell Price</p>
                     <div>
                       <input
                         className="stockquantity mt-2"
                         type="number"
-                        onChange={(e) => setBid(e.target.value)}
+                        onChange={(e) => setSell(e.target.value)}
                       />
                     </div>
                   </div>
@@ -93,21 +93,21 @@ const BuyModal = ({ id, short_name, company_name }) => {
                 </div>
               </div>
             </div>
-            <div
+            {/* <div
               className="text-light mb-3 px-1"
               style={{ fontSize: "17px" }}
-            >{`[You have ₹100000 in your wallet]`}</div>
+            >{`[Current holdings : 1000 shares]`}</div> */}
             <div
               className="text-warning mb-3 px-1"
               style={{ fontSize: "17px" }}
-            >{`[Note : Total transaction value will be ₹${bid * qty}]`}</div>
+            >{`[Note : Current holdings 1000 shares]`}</div>
             <div className="modal-footer border-0 align-items-center">
               <button
                 type="button"
-                className="btn btn-success mx-3 mb-4"
+                className="btn btn-danger mx-3 mb-4"
                 onClick={handleBuy}
               >
-                Buy
+                Sell
               </button>
             </div>
           </div>
@@ -117,4 +117,4 @@ const BuyModal = ({ id, short_name, company_name }) => {
   );
 };
 
-export default BuyModal;
+export default SellModal;

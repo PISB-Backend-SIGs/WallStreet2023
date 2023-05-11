@@ -5,6 +5,7 @@ import LineChart from "../Components/LineChart";
 import { CategoryScale } from "chart.js";
 import Chart from "chart.js/auto";
 import BuyModal from "../Components/BuyModal";
+import SellModal from "../Components/SellModal";
 import { useParams } from "react-router-dom";
 import { getStockDetail } from "../Utils/Apis";
 import { ThreeDots } from "react-loader-spinner";
@@ -99,9 +100,15 @@ const StocksDetail = () => {
               />
             </div>
             <div className="col-6 text-start px-4">
-              <button className="btn btnbuysell btn-danger fs-5 py-1">
+              <button className="btn btnbuysell btn-danger fs-5 py-1" data-toggle="modal"
+                data-target={`#sellmodal${id}`}>
                 Sell
               </button>
+              <SellModal
+                id={stock.id}
+                short_name={stock.short_name}
+                company_name={stock.company_name}
+              />
             </div>
           </div>
         </>
