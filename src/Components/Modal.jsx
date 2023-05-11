@@ -68,7 +68,7 @@ const Modal = ({
               data-dismiss="modal"
               aria-label="Close"
             >
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true"><h4>&times;</h4></span>
             </div>
           </div>
 
