@@ -28,19 +28,7 @@ const Ipo = () => {
 
       <br />
 
-      {!ipos && (
-        <ThreeDots
-        height="55"
-        width="55"
-        color="#5eb5f8"
-        ariaLabel="line-wave"
-        wrapperClass="loader"
-        visible={true}
-        firstLineColor=""
-        middleLineColor=""
-        lastLineColor=""
-      />
-      )}
+      
 
       <div className="row row-cols-1 g-4 g-sm-3 mx-sm-auto mx-0">
         {ipos &&

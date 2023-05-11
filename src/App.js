@@ -70,8 +70,8 @@ function App() {
               />
               <Route
                 exact
-                path="/stocksdetail"
-                element={<StocksDetail />}
+                path="/stocksdetail/:id"
+                element={user ? <StocksDetail /> : <Navigate to="/login" />}
               />
               <Route exact path="/ipo" element={<Ipo />} />
               <Route

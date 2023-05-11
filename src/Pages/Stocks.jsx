@@ -3,18 +3,22 @@ import { useEffect } from "react";
 import { useState } from "react";
 import StockCard from "../Components/StockCard";
 import { getAllStocks } from "../Utils/Apis";
+import { Link } from "react-router-dom";
+import { ThreeDots } from "react-loader-spinner";
 
 const Stocks = () => {
   const [stocks, setStocks] = useState(null);
 
   useEffect(() => {
-    getAllStocks()
-      .then((stocks) => {
-        setStocks(stocks.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    setTimeout(() => {
+      getAllStocks()
+        .then((stocks) => {
+          setStocks(stocks.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }, 1300);
   }, []);
 
   return (
@@ -39,15 +43,31 @@ const Stocks = () => {
         </div>
       </div>
 
+      {!stocks && (
+        <ThreeDots
+          height="55"
+          width="55"
+          color="#5eb5f8"
+          ariaLabel="line-wave"
+          wrapperClass="loader"
+          visible={true}
+          firstLineColor=""
+          middleLineColor=""
+          lastLineColor=""
+        />
+      )}
+
       {/* Columns */}
       <div className="row row-cols-1 row-cols-xl-3 row-cols-md-2 g-2 mt-5">
         {stocks && (
           <>
             {stocks.map((stock) => {
               return (
-                <div className="col">
-                  <StockCard key={stock.id} {...stock} />
-                </div>
+                <Link to={`/stocksdetail/${stock.id}`}>
+                  <div className="col">
+                    <StockCard key={stock.id} {...stock} />
+                  </div>
+                </Link>
               );
             })}
           </>

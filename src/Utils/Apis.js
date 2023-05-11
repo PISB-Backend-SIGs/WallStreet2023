@@ -30,3 +30,9 @@ export const placeBuyOrder = (data) => {
 export const getAllStocks = () => {
   return axiosInstance.get("/company/");
 };
+
+export const getStockDetail = (id) => {
+  return axiosInstance.get(`/company/${id}`);
+};
+
+
