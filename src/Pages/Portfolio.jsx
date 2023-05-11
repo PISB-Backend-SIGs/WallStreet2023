@@ -33,7 +33,7 @@ const Portfolio = () => {
             style={{ backgroundColor: "#3d3d4c", color: "#fefdff", borderRadius: "10px" }}
           >
             <div className="card-body" style={{ padding: "12px" }}>
-              <div className="d-flex justify-content-around font-weight-bold">
+              <div className="row row-cols-3 text-center font-weight-bold">
               <p class="mb-0">Companay Name</p>
               <p class="mb-0">Quantity</p>
               <p class="mb-0">Offer Bid</p>
