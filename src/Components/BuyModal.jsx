@@ -94,13 +94,13 @@ const BuyModal = ({ id, short_name, company_name }) => {
               </div>
             </div>
             <div
-              className="text-light mb-3 px-1"
-              style={{ fontSize: "17px" }}
-            >{`[You have ₹100000 in your wallet]`}</div>
+              className="text-light mb-3 px-1 bi bi-wallet"
+              style={{ fontSize: "18px" }}
+            >{` Wallet : ₹100000`}</div>
             <div
               className="text-warning mb-3 px-1"
-              style={{ fontSize: "17px" }}
-            >{`[Note : Total transaction value will be ₹${bid * qty}]`}</div>
+              style={{ fontSize: "18px" }}
+            >{`[Total transaction value will be ₹${bid * qty}]`}</div>
             <div className="modal-footer border-0 align-items-center">
               <button
                 type="button"
