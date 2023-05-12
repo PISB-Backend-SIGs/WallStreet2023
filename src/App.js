@@ -60,7 +60,7 @@ function App() {
               />
               <Route
                 exact
-                path="/:newsdetail"
+                path="/newsdetail/:id"
                 element={user ? <NewsDetail /> : <Navigate to="/login" />}
               />
               <Route

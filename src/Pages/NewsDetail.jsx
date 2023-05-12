@@ -1,32 +1,54 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { getNewsDetail } from "../Utils/Apis";
+import { ThreeDots } from "react-loader-spinner";
 
 const NewsDetail = () => {
+  const { id } = useParams();
+
+  const [news, setNews] = useState(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      getNewsDetail(id)
+        .then((n) => {
+          setNews(n.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }, 1300);
+  }, []);
 
   return (
-    <div className="container p-3 p-sm-5">
-      <div className="mt-2">
-        <div className="flex align-items-center">
-          <div className="h3 newsdetailheadline">
-            Credit Suisse shares tank after Saudi backer rules out further
-            assistance
+    <div className="container p-3 px-4 p-sm-5">
+      {!news && (
+        <ThreeDots
+          height="55"
+          width="55"
+          color="#5eb5f8"
+          ariaLabel="line-wave"
+          wrapperClass="loader"
+          visible={true}
+          firstLineColor=""
+          middleLineColor=""
+          lastLineColor=""
+        />
+      )}
+
+      {news && (
+        <>
+          <div className="mt-2">
+            <div className="flex align-items-center">
+              <div className="h3 newsdetailheadline">{news.title}</div>
+              <br />
+              <div className="newsbody mt-1 mt-sm-5">{news.description}</div>
+            </div>
           </div>
-          <br />
-          <div className="newsbody mt-1 mt-sm-5">
-            Shares of Credit Suisse on Wednesday plunged to a fresh all-time low
-            for the second consecutive day after a top investor in the embattled
-            Swiss bank said it would not be able to provide any more cash due to
-            regulatory restrictions. Trading in the bank’s plummeting stock was
-            halted several times throughout the morning as it fell below 2 Swiss
-            francs ($2.17) for the first time. Swiss-listed Credit Suisse shares
-            ended the session down 24%, paring some of its earlier losses after
-            dropping more than 30% at one point. The U.S.-traded American
-            depositary receipts of Credit Suisse were last down about 15%. After
-            European markets closed, Swiss regulators said that Credit Suisse
-            currently meets capital and liquidity requirements and that the
-            Swiss National Bank will provide additional liquidity if necessary.
-          </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };

@@ -39,4 +39,11 @@ export const getStockDetail = (id) => {
   return axiosInstance.get(`/company/${id}`);
 };
 
+export const getNews = (id) => {
+  return axiosInstance.get("/news/");
+};
+
+export const getNewsDetail = (id) => {
+  return axiosInstance.get(`/news/${id}`);
+};
 

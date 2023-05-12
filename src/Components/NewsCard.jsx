@@ -1,26 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const NewsCard = () => {
+const NewsCard = ({id, title, description}) => {
   return (
     <div className="container">
       <div className="d-flex">
         <div
-          class="card m-3 border-0 shadow-lg "
+          class="card m-3 border-0 shadow-lg"
           style={{ backgroundColor: "#3d3d4d", borderRadius: "10px" }}
         >
           <div class="card-body">
             <h5 class="card-title mb-4" style={{ color: "#5eb5f8" }}>
-              News title
+              {title}
             </h5>
             <p class="card-text  mb-4" style={{ color: "#fefdff" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil in
-              impedit earum quam labore odio consequatur, itaque porro aperiam
-              illo inventore, a veniam beatae totam ea reiciendis, animi vero
-              ullam ...
+              {description.slice(0,200)} ...
             </p>
-            <a href="#" class="card-link text-muted">
-              Read more
-            </a>
+            <Link to={`/newsdetail/${id}`} class="card-link text-muted">
+              <u>Read more</u>
+            </Link>
           </div>
         </div>
       </div>
