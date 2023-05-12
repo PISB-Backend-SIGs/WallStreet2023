@@ -3,7 +3,7 @@ import { useState } from "react";
 import { placeBuyOrder } from "../Utils/Apis";
 import { toast } from "react-toastify";
 
-const BuyModal = ({ id, short_name, company_name }) => {
+const BuyModal = ({ id, short_name, company_name, cash, current_price }) => {
   const [qty, setQty] = useState(0);
   const [bid, setBid] = useState(0);
 
@@ -72,7 +72,7 @@ const BuyModal = ({ id, short_name, company_name }) => {
                   <div className="col-6">
                     <p className="mb-0 ipodetailtitle mt-3">Current Price</p>
                     <div className="text-light" style={{ fontSize: "19px" }}>
-                      $1000
+                      {`₹ ${current_price}`}
                     </div>
                   </div>
 
@@ -112,11 +112,11 @@ const BuyModal = ({ id, short_name, company_name }) => {
             <div
               className="text-light mb-3 mt-3 px-1 bi bi-wallet"
               style={{ fontSize: "18px" }}
-            >{` Wallet : ₹100000`}</div>
+            >{` Wallet : ₹${cash}`}</div>
             <div
               className="text-warning mb-2 px-1"
               style={{ fontSize: "18px" }}
-            >{`[Total transaction value will be ₹${bid * qty}]`}</div>
+            >{`[Total transaction value will be ₹ ${bid * qty}]`}</div>
             <div className="modal-footer border-0 align-items-center">
               <button
                 type="button"

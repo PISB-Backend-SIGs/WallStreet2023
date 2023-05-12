@@ -7,7 +7,7 @@ import Chart from "chart.js/auto";
 import BuyModal from "../Components/BuyModal";
 import SellModal from "../Components/SellModal";
 import { useParams } from "react-router-dom";
-import { getStockDetail } from "../Utils/Apis";
+import { getStockDetail, getPortfolio } from "../Utils/Apis";
 import { ThreeDots } from "react-loader-spinner";
 
 Chart.register(CategoryScale);
@@ -16,12 +16,21 @@ const StocksDetail = () => {
   const { id } = useParams();
 
   const [stock, setStock] = useState(null);
+  const [cash, setCash] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
       getStockDetail(id)
         .then((s) => {
           setStock(s.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+      getPortfolio(id)
+        .then((p) => {
+          setCash(p.data.cash);
         })
         .catch((error) => {
           console.error(error);
@@ -67,18 +76,19 @@ const StocksDetail = () => {
 
       {stock && (
         <>
-          <div className="row mt-4 mt-sm-2 ps-2">
-            <div className="d-flex align-items-center">
-              <div className="h3 stockdetailtitle pe-2 ">
-                {stock.short_name}
-              </div>
+          <div className="row mt-5 mt-sm-3 ps-2">
+            <div className="d-flex align-items-center justify-content-center">
+              <div className="h3 stockdetailtitle pe-2">{stock.short_name}</div>
               <div className="h3 stockdetailname"> - {stock.company_name}</div>
             </div>
           </div>
 
           {/* Chart */}
           <div className="row mt-5 w-100">
-            <div className="col">
+            <div
+              className="col"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
               <LineChart chartData={chartData} />
             </div>
           </div>
@@ -97,11 +107,16 @@ const StocksDetail = () => {
                 id={stock.id}
                 short_name={stock.short_name}
                 company_name={stock.company_name}
+                current_price={stock.last_traded_price}
+                cash={cash}
               />
             </div>
             <div className="col-6 text-start px-4">
-              <button className="btn btnbuysell btn-danger fs-5 py-1" data-toggle="modal"
-                data-target={`#sellmodal${id}`}>
+              <button
+                className="btn btnbuysell btn-danger fs-5 py-1"
+                data-toggle="modal"
+                data-target={`#sellmodal${id}`}
+              >
                 Sell
               </button>
               <SellModal

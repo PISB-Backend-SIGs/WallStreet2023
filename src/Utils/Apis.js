@@ -39,6 +39,7 @@ export const getStockDetail = (id) => {
   return axiosInstance.get(`/company/${id}`);
 };
 
+// Change this later
 export const getNews = (id) => {
   return axios.get("http://127.0.0.1:8000/api/news/");
 };

@@ -13,7 +13,7 @@ const StockCard = ({ id, company_name, short_name, last_traded_price }) => {
                 <p class="mb-0 stockname">{company_name}</p>
               </div>
               <div class="col-6 text-end">
-                <p class="mb-3 mb-sm-2 font-weight-bold">{last_traded_price}</p>
+                <p class="mb-3 mb-sm-2 font-weight-bold">{`₹ ${last_traded_price}`}</p>
                 <p class="mb-0 text-success font-weight-bold">+1.25%</p>
               </div>
             </div>

@@ -11,6 +11,7 @@ import Navbar from "./Components/Navbar";
 import Ranking from "./Pages/Ranking";
 import Login1 from "./Pages/Login1";
 import Portfolio from "./Pages/Portfolio";
+import PortfolioNew from "./Pages/PortfolioNew"
 import { UseAuthContext } from "./Hooks/UseAuthContext";
 import { ToastContainer } from "react-toastify";
 import DesktopNavbar from "./Components/DesktopNavbar";
@@ -88,7 +89,7 @@ function App() {
               <Route
                 exact
                 path="/portfolio"
-                element={user ? <Portfolio /> : <Navigate to="/login" />}
+                element={user ? <PortfolioNew /> : <Navigate to="/login" />}
               />
               <Route exact path="/team" element={<OurTeam />} />
               <Route exact path="/rules" element={<Rules />} />
