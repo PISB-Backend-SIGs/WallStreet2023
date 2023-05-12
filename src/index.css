@@ -95,7 +95,7 @@
   font-weight: bold;
   font-size: 25px;
   color: #5eb5f8;
-  margin-top: 2px;
+  margin-top: -2px;
 }
 
 .stockname{
@@ -103,7 +103,7 @@
 }
 
 .stockdetailname{
-  margin-top: 2px;
+  margin-top: -2px;
   color: #fefdff;
 }
 

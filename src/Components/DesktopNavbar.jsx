@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import image from "../Images/stockwhite.svg"
+import image from "../Images/stockwhite.svg";
 
 const DesktopNavbar = () => {
   return (
@@ -9,10 +9,9 @@ const DesktopNavbar = () => {
         <div>
           <nav className="desktopNavbar navbar navbar-expand-md navbar-light mx-0">
             <div className="container">
-
               <NavLink to="/" className="navbar-brand">
                 <div>
-                  <img src={image} alt="" id="logo"/>
+                  <img src={image} alt="" id="logo" />
                   <span className="desktoptitle"> Wallstreet </span>
                 </div>
               </NavLink>
@@ -39,22 +38,27 @@ const DesktopNavbar = () => {
                       Home
                     </NavLink>
                   </li>
-                  {/* <li className="nav-item">
+                  <li className="nav-item">
+                    <NavLink to="/news" className="nav-link text-light navItem">
+                      News
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
                     <NavLink
                       to="/ranking"
                       className="nav-link text-light navItem"
                     >
                       Rankings
                     </NavLink>
-                  </li> */}
-                  <li className="nav-item">
+                  </li>
+                  {/* <li className="nav-item">
                     <NavLink
                       to="/ipo"
                       className="nav-link text-light navItem"
                     >
                       IPOs
                     </NavLink>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <NavLink
                       to="/rules"

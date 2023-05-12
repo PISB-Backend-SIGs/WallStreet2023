@@ -67,12 +67,12 @@ const StocksDetail = () => {
 
       {stock && (
         <>
-          <div className="row mt-2">
+          <div className="row mt-4 mt-sm-2 ps-2">
             <div className="d-flex align-items-center">
               <div className="h3 stockdetailtitle pe-2 ">
                 {stock.short_name}
               </div>
-              <div className="h4 stockdetailname"> - {stock.company_name}</div>
+              <div className="h3 stockdetailname"> - {stock.company_name}</div>
             </div>
           </div>
 

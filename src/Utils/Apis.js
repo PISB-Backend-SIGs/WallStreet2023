@@ -40,10 +40,13 @@ export const getStockDetail = (id) => {
 };
 
 export const getNews = (id) => {
-  return axiosInstance.get("/news/");
+  return axios.get("http://127.0.0.1:8000/api/news/");
 };
 
 export const getNewsDetail = (id) => {
   return axiosInstance.get(`/news/${id}`);
 };
 
+export const getPortfolio = () => {
+  return axiosInstance.get("/profile/");
+};

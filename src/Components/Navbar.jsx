@@ -70,7 +70,7 @@ const Navbar = () => {
                     </NavLink>
                   </li>}
 
-                  {user && <li className="nav-item">
+                  <li className="nav-item">
                     <NavLink
                       exact
                       to="/news"
@@ -81,9 +81,9 @@ const Navbar = () => {
                         News
                       </span>
                     </NavLink>
-                  </li>}
+                  </li>
 
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <NavLink
                       exact
                       to="/ipo"
@@ -94,7 +94,7 @@ const Navbar = () => {
                         Ipo
                       </span>
                     </NavLink>
-                  </li>
+                  </li> */}
 
                   {user && <li className="nav-item">
                     <NavLink
@@ -109,7 +109,7 @@ const Navbar = () => {
                     </NavLink>
                   </li>}
 
-                  {/* <li className="nav-item">
+                  <li className="nav-item">
                     <NavLink
                       exact
                       to="/ranking"
@@ -117,10 +117,10 @@ const Navbar = () => {
                     >
                       <span className="bi bi-bar-chart navitems h3 bi bi-box-arrow-left bi bi-people">
                         {" "}
-                        Ranking
+                        Rankings
                       </span>
                     </NavLink>
-                  </li> */}
+                  </li>
 
                   <li className="nav-item">
                     <NavLink
