@@ -67,13 +67,29 @@ const BuyModal = ({ id, short_name, company_name }) => {
             </div>
 
             <div className="modal-body justify-content-center">
-              <div className="details m-3 mt-0 ">
+              <div className="details mx-3 my-0 mt-0 ">
+                <div className="row">
+                  <div className="col-6">
+                    <p className="mb-0 ipodetailtitle mt-3">Current Price</p>
+                    <div className="text-light" style={{ fontSize: "19px" }}>
+                      $1000
+                    </div>
+                  </div>
+
+                  <div className="col-6 text-end ">
+                    <p className="mb-0 ipodetailtitle mt-3">% Change</p>
+                    <div className="text-success" style={{ fontSize: "19px" }}>
+                      +1.5%
+                    </div>
+                  </div>
+                </div>
+
                 <div className="row">
                   <div className="col-6">
                     <p className="mb-0 ipodetailtitle mt-3">Bid Price</p>
                     <div>
                       <input
-                        className="stockquantity mt-2"
+                        className="stockquantity mt-1"
                         type="number"
                         onChange={(e) => setBid(e.target.value)}
                       />
@@ -84,7 +100,7 @@ const BuyModal = ({ id, short_name, company_name }) => {
                     <p className="mb-0 ipodetailtitle mt-3">Quantity</p>
                     <div>
                       <input
-                        className="stockquantity mt-2"
+                        className="stockquantity mt-1"
                         type="number"
                         onChange={(e) => setQty(e.target.value)}
                       />
@@ -94,17 +110,17 @@ const BuyModal = ({ id, short_name, company_name }) => {
               </div>
             </div>
             <div
-              className="text-light mb-3 px-1 bi bi-wallet"
+              className="text-light mb-3 mt-3 px-1 bi bi-wallet"
               style={{ fontSize: "18px" }}
             >{` Wallet : ₹100000`}</div>
             <div
-              className="text-warning mb-3 px-1"
+              className="text-warning mb-2 px-1"
               style={{ fontSize: "18px" }}
             >{`[Total transaction value will be ₹${bid * qty}]`}</div>
             <div className="modal-footer border-0 align-items-center">
               <button
                 type="button"
-                className="btn btn-success mx-3 mb-4"
+                className="btn btn-success mx-3 mb-3"
                 onClick={handleBuy}
               >
                 Buy
