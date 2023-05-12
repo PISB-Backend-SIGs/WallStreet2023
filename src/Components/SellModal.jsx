@@ -67,13 +67,29 @@ const SellModal = ({ id, short_name, company_name }) => {
             </div>
 
             <div className="modal-body justify-content-center">
-              <div className="details m-3 mt-0 ">
+              <div className="details mx-3 my-0 mt-0 ">
                 <div className="row">
+                  <div className="col-6">
+                    <p className="mb-0 ipodetailtitle mt-3">Current Price</p>
+                    <div className="text-light" style={{ fontSize: "19px" }}>
+                      $1000
+                    </div>
+                  </div>
+
+                  <div className="col-6 text-end ">
+                    <p className="mb-0 ipodetailtitle mt-3">% Change</p>
+                    <div className="text-success" style={{ fontSize: "19px" }}>
+                      +1.5%
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row mt-2">
                   <div className="col-6">
                     <p className="mb-0 ipodetailtitle mt-3">Sell Price</p>
                     <div>
                       <input
-                        className="stockquantity mt-2"
+                        className="stockquantity mt-1"
                         type="number"
                         onChange={(e) => setSell(e.target.value)}
                       />
@@ -84,7 +100,7 @@ const SellModal = ({ id, short_name, company_name }) => {
                     <p className="mb-0 ipodetailtitle mt-3">Quantity</p>
                     <div>
                       <input
-                        className="stockquantity mt-2"
+                        className="stockquantity mt-1"
                         type="number"
                         onChange={(e) => setQty(e.target.value)}
                       />
@@ -98,13 +114,13 @@ const SellModal = ({ id, short_name, company_name }) => {
               style={{ fontSize: "17px" }}
             >{`[Current holdings : 1000 shares]`}</div> */}
             <div
-              className="text-light mb-3 px-1 bi bi-pie-chart"
+              className="text-light mb-2 mt-3 px-1 bi bi-pie-chart"
               style={{ fontSize: "18px" }}
             >{` Current holdings : 1000 shares`}</div>
             <div className="modal-footer border-0 align-items-center">
               <button
                 type="button"
-                className="btn btn-danger mx-3 mb-4"
+                className="btn btn-danger mx-3 mb-3"
                 onClick={handleBuy}
               >
                 Sell

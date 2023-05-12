@@ -84,7 +84,7 @@ const BuyModal = ({ id, short_name, company_name }) => {
                   </div>
                 </div>
 
-                <div className="row">
+                <div className="row mt-2">
                   <div className="col-6">
                     <p className="mb-0 ipodetailtitle mt-3">Bid Price</p>
                     <div>
