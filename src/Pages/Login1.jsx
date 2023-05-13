@@ -27,7 +27,7 @@ const Login1 = () => {
         const is_team = "";
 
         //change this later
-        const localLoginUrl = 'http://127.0.0.1:8000/auth/token/login/';
+        const localLoginUrl = 'https://api.wallstreet.credenz.in/auth/token/login/';
         const remoteLoginUrl = 'https://api.credenz.in/api/verify/user/';
         const localCreateUserUrl = 'https://api.wallstreet.credenz.in/api/register/';
 

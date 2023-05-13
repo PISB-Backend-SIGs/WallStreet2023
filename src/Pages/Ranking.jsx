@@ -10,9 +10,9 @@ const Ranking = () => {
 
     setTimeout(() => {
       axios
-      .get("http://127.0.0.1:8000/api/leaderboard/")
+      .get("https://api.wallstreet.credenz.in/api/leaderboard/")
       .then((response) => {
-        setRanks(response.data);
+        setRanks((response.data).slice(0,50));
       })
       .catch((error) => {
         console.log(error);
@@ -42,8 +42,8 @@ const Ranking = () => {
       <div className="row row-cols-1 g-4 g-sm-3">
         {ranks && (
           <>
-            {ranks.map((rank) => {
-              return <RankCard key={rank.id} {...rank} />;
+            {ranks.map((rank, index) => {
+              return <RankCard key={rank.id} {...rank} ranki={index+1}/>;
             })}
           </>
         )}

@@ -41,7 +41,7 @@ export const getStockDetail = (id) => {
 
 // Change this later
 export const getNews = (id) => {
-  return axios.get("http://127.0.0.1:8000/api/news/");
+  return axios.get("https://api.wallstreet.credenz.in/api/news/");
 };
 
 export const getNewsDetail = (id) => {

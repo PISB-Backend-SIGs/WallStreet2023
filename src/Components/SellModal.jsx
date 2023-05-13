@@ -7,7 +7,7 @@ const SellModal = ({ id, short_name, company_name, current_price, change, shares
   const [qty, setQty] = useState(0);
   const [sell, setSell] = useState(0);
   const sign = change > 0 ? "+" : "";
-  const color = change > 0 ? "text-success" : "text-danger";
+  const color = change >= 0 ? "text-success" : "text-danger";
 
   const handleBuy = (e) => {
     e.preventDefault();

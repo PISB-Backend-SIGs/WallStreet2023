@@ -9,6 +9,7 @@ const PortfolioNew = () => {
   const [cash, setCash] = useState(0);
   const [networth, setNetworth] = useState(0);
   const [transactions, setTransactions] = useState(null);
+  const [holdings, setHoldings] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,6 +19,7 @@ const PortfolioNew = () => {
           setCash(p.data.cash);
           setNetworth(p.data.net_worth);
           setTransactions(p.data.user_history.slice(-5).reverse());
+          setHoldings(p.data.user_shares);
         })
         .catch((error) => {
           console.error(error);
@@ -91,33 +93,26 @@ const PortfolioNew = () => {
                   <th scope="col" className="py-3">
                     Qty
                   </th>
-                  <th scope="col" className="py-3">
+                  {/* <th scope="col" className="py-3">
                     Buying{" "}
-                  </th>
+                  </th> */}
                   <th scope="col" className="py-3">
                     Current
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-0">
-                  <td scope="row">APPL</td>
-                  <td>1000</td>
-                  <td>6000</td>
-                  <td>7000 (+3.6%)</td>
-                </tr>
-                <tr className="border-0">
-                  <td scope="row">APPL</td>
-                  <td>1000</td>
-                  <td>6000</td>
-                  <td>7000 (+3.6%)</td>
-                </tr>
-                <tr className="border-0">
-                  <td scope="row">APPL</td>
-                  <td>1000</td>
-                  <td>6000</td>
-                  <td>7000 (+3.6%)</td>
-                </tr>
+                <>
+                  {holdings.map((t) => {
+                    return (
+                      <tr className="border-0">
+                        <td scope="row">{t.company.short_name}</td>
+                        <td>{t.shares}</td>
+                        <td>{t.company.last_traded_price}</td>
+                      </tr>
+                    );
+                  })}
+                </>
               </tbody>
             </table>
           </div>

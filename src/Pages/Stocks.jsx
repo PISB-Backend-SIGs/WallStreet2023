@@ -2,12 +2,13 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import StockCard from "../Components/StockCard";
-import { getAllStocks } from "../Utils/Apis";
+import { getAllStocks, getPortfolio } from "../Utils/Apis";
 import { Link } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 
 const Stocks = () => {
   const [stocks, setStocks] = useState(null);
+  const [cash, setCash] = useState(0)
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,6 +19,16 @@ const Stocks = () => {
         .catch((error) => {
           console.error(error);
         });
+
+        getPortfolio()
+        .then((c) => {
+          setCash(c.data.cash)
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+
     }, 1300);
   }, []);
 
@@ -38,7 +49,7 @@ const Stocks = () => {
           </div>
           <div className="btnbalance px-3 me-3 text-center p-2 shadow bi bi-wallet d-none d-sm-block ">
             {" "}
-            $1000.00
+            {`₹ ${cash}`}
           </div>
         </div>
       </div>
@@ -62,10 +73,17 @@ const Stocks = () => {
         {stocks && (
           <>
             {stocks.map((stock) => {
+              const change = (
+                ((stock.last_traded_price -
+                  stock.last_traded_prices.slice(-1)) /
+                  stock.last_traded_prices.slice(-1)) *
+                100
+              ).toFixed(1)
+              const color = (change>=0) ? "text-success" : "text-danger"
               return (
                 <Link to={`/stocksdetail/${stock.id}`}>
                   <div className="col">
-                    <StockCard key={stock.id} {...stock} />
+                    <StockCard key={stock.id} {...stock} change={change} color={color}/>
                   </div>
                 </Link>
               );
