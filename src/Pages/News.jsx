@@ -13,7 +13,7 @@ const News = () => {
     setTimeout(() => {
       getNews()
         .then((news) => {
-          setNews(news.data);
+          setNews((news.data).reverse());
         })
         .catch((error) => {
           console.error(error);
