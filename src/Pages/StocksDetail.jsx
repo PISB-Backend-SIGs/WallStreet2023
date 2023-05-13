@@ -23,7 +23,7 @@ const StocksDetail = () => {
   const [shares, setShares] = useState(0);
   const [chartData, setChartData] = useState(null);
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
