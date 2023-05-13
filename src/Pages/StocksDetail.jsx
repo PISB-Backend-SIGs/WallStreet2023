@@ -23,7 +23,7 @@ const StocksDetail = () => {
   const [shares, setShares] = useState(0);
   const [chartData, setChartData] = useState(null);
 
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -156,7 +156,7 @@ const StocksDetail = () => {
             </div>
           </div>)}
 
-          {!isOpen && (<div className="text-warning mb-5 fs-5 text-center">[Note : Market is closed currently]</div>)}
+          {!isOpen && (<div className="text-warning mb-5 fs-5 text-center">[Note : Due to technical difficulties, the market is currently closed. Trading will be resumed soon.]</div>)}
 
           {!isOpen && (<div className="row">
             <div className="col-6 text-end px-4">
