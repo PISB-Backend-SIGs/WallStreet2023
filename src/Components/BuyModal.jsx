@@ -3,9 +3,11 @@ import { useState } from "react";
 import { placeBuyOrder } from "../Utils/Apis";
 import { toast } from "react-toastify";
 
-const BuyModal = ({ id, short_name, company_name, cash, current_price }) => {
+const BuyModal = ({ id, short_name, company_name, cash, current_price, change }) => {
   const [qty, setQty] = useState(0);
   const [bid, setBid] = useState(0);
+  const sign = (change>0) ? "+" : ""
+  const color = (change>0) ? "text-success" : "text-danger"
 
   const handleBuy = (e) => {
     e.preventDefault();
@@ -78,8 +80,8 @@ const BuyModal = ({ id, short_name, company_name, cash, current_price }) => {
 
                   <div className="col-6 text-end ">
                     <p className="mb-0 ipodetailtitle mt-3">% Change</p>
-                    <div className="text-success" style={{ fontSize: "19px" }}>
-                      +1.5%
+                    <div className={color} style={{ fontSize: "19px" }}>
+                      {`${sign}${change}%`}
                     </div>
                   </div>
                 </div>

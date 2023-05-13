@@ -18,6 +18,7 @@ const StocksDetail = () => {
   const [stock, setStock] = useState(null);
   const [cash, setCash] = useState(0);
   const [prices, setPrices] = useState(null);
+  const [change, setChange] = useState(0)
 
   const [chartData, setChartData] = useState(null);
 
@@ -28,7 +29,7 @@ const StocksDetail = () => {
           setStock(s.data);
           setPrices(s.data.last_traded_prices);
           setChartData({
-            labels: s.data.last_traded_prices.map((data) => data),
+            labels: s.data.last_traded_prices.map((data, index) => index),
             datasets: [
               {
                 label: " ",
@@ -45,6 +46,7 @@ const StocksDetail = () => {
               },
             ],
           });
+          setChange( (((s.data.last_traded_price-s.data.last_traded_prices.slice(-1))/(s.data.last_traded_prices.slice(-1))) * 100).toFixed(1))
           //console.log(prices);
         })
         .catch((error) => {
@@ -113,6 +115,7 @@ const StocksDetail = () => {
                 short_name={stock.short_name}
                 company_name={stock.company_name}
                 current_price={stock.last_traded_price}
+                change={change}
                 cash={cash}
               />
             </div>
@@ -128,6 +131,8 @@ const StocksDetail = () => {
                 id={stock.id}
                 short_name={stock.short_name}
                 company_name={stock.company_name}
+                current_price={stock.last_traded_price}
+                change={change}
               />
             </div>
           </div>
