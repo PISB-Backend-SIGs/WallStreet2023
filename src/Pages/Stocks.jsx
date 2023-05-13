@@ -91,6 +91,9 @@ const Stocks = () => {
           </>
         )}
       </div>
+      <br />
+      <br />
+      <br />
     </div>
   );
 };

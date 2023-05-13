@@ -26,7 +26,12 @@ const Ranking = () => {
     <div className="container p-0 p-sm-5">
       <div className="h3 ranking mb-3 mb-sm-4 text-center">Ranking</div>
       <br />
-      {!ranks && (
+
+      <div class="comingsoon">
+                <h3 className='comingsoonText'>Will be updated soon...</h3>
+            </div>
+
+      {/* {!ranks && (
         <ThreeDots
           height="55"
           width="55"
@@ -49,7 +54,9 @@ const Ranking = () => {
         )}
       </div>
       <br />
-      <br />
+      <br /> */}
+
+
     </div>
   );
 };

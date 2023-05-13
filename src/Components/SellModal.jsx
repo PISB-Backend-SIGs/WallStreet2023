@@ -124,6 +124,8 @@ const SellModal = ({ id, short_name, company_name, current_price, change, shares
                 type="button"
                 className="btn btn-danger mx-3 mb-3"
                 onClick={handleBuy}
+                data-dismiss="modal"
+                aria-label="Close"
               >
                 Sell
               </button>

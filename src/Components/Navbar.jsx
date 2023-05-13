@@ -57,7 +57,14 @@ const Navbar = () => {
                   id="menu"
                 >
                   {user && (
-                    <li className="nav-item">
+                    <li
+                      className="nav-item"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#navbarSupportedContent"
+                      aria-controls="navbarSupportedContent"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                    >
                       <NavLink
                         exact
                         to="/stocks"
@@ -71,7 +78,14 @@ const Navbar = () => {
                     </li>
                   )}
 
-                  <li className="nav-item">
+                  <li
+                    className="nav-item"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
                     <NavLink
                       exact
                       to="/news"
@@ -98,7 +112,14 @@ const Navbar = () => {
                   </li> */}
 
                   {user && (
-                    <li className="nav-item">
+                    <li
+                      className="nav-item"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#navbarSupportedContent"
+                      aria-controls="navbarSupportedContent"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                    >
                       <NavLink
                         exact
                         to="portfolio"
@@ -112,7 +133,14 @@ const Navbar = () => {
                     </li>
                   )}
 
-                  <li className="nav-item">
+                  <li
+                    className="nav-item"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
                     <NavLink
                       exact
                       to="/ranking"
@@ -125,7 +153,14 @@ const Navbar = () => {
                     </NavLink>
                   </li>
 
-                  <li className="nav-item">
+                  <li
+                    className="nav-item"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
                     <NavLink
                       exact
                       to="/rules"
@@ -139,7 +174,14 @@ const Navbar = () => {
                   </li>
 
                   {!user && (
-                    <li className="nav-item">
+                    <li
+                      className="nav-item"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#navbarSupportedContent"
+                      aria-controls="navbarSupportedContent"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                    >
                       <NavLink
                         exact
                         to="/login"

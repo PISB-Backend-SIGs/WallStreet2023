@@ -124,6 +124,8 @@ const BuyModal = ({ id, short_name, company_name, cash, current_price, change })
                 type="button"
                 className="btn btn-success mx-3 mb-3"
                 onClick={handleBuy}
+                data-dismiss="modal"
+                aria-label="Close"
               >
                 Buy
               </button>
