@@ -17,12 +17,35 @@ const StocksDetail = () => {
 
   const [stock, setStock] = useState(null);
   const [cash, setCash] = useState(0);
+  const [prices, setPrices] = useState(null);
+
+  const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
       getStockDetail(id)
         .then((s) => {
           setStock(s.data);
+          setPrices(s.data.last_traded_prices);
+          setChartData({
+            labels: s.data.last_traded_prices.map((data) => data),
+            datasets: [
+              {
+                label: " ",
+                data: s.data.last_traded_prices.map((data) => data),
+                backgroundColor: [
+                  "rgba(75,192,192,1)",
+                  "#ecf0f1",
+                  "#f0331a",
+                  "#f3ba2f",
+                  "#2a71d0",
+                ],
+                borderColor: "#5eb5f8",
+                borderWidth: 2,
+              },
+            ],
+          });
+          //console.log(prices);
         })
         .catch((error) => {
           console.error(error);
@@ -37,26 +60,6 @@ const StocksDetail = () => {
         });
     }, 1300);
   }, []);
-
-  const [chartData, setChartData] = useState({
-    labels: Data.map((data) => data.a),
-
-    datasets: [
-      {
-        label: " ",
-        data: Data.map((data) => data.b),
-        backgroundColor: [
-          "rgba(75,192,192,1)",
-          "#ecf0f1",
-          "#f0331a",
-          "#f3ba2f",
-          "#2a71d0",
-        ],
-        borderColor: "#5eb5f8",
-        borderWidth: 2,
-      },
-    ],
-  });
 
   return (
     <div className="container p-3 p-sm-5">
@@ -84,14 +87,16 @@ const StocksDetail = () => {
           </div>
 
           {/* Chart */}
-          <div className="row mt-5 w-100">
-            <div
-              className="col"
-              style={{ display: "flex", justifyContent: "center" }}
-            >
-              <LineChart chartData={chartData} />
+          {chartData && (
+            <div className="row mt-5 w-100">
+              <div
+                className="col"
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <LineChart chartData={chartData} />
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Buy/Sell  */}
           <div className="row">
