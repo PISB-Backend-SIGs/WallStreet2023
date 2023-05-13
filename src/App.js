@@ -91,7 +91,7 @@ function App() {
                 path="/portfolio"
                 element={user ? <PortfolioNew /> : <Navigate to="/login" />}
               />
-              <Route exact path="/team" element={<OurTeam />} />
+              {/* <Route exact path="/team" element={<OurTeam />} /> */}
               <Route exact path="/rules" element={<Rules />} />
               <Route exact path="/comingsoon" element={<CommingSoon />} />
             </Routes>
