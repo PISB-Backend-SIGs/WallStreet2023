@@ -51,3 +51,7 @@ export const getNewsDetail = (id) => {
 export const getPortfolio = () => {
   return axiosInstance.get("/profile/");
 };
+
+export const getUserShares = (id) => {
+  return axiosInstance.get(`/companyshares/?id=${id}`);
+};

@@ -9,6 +9,7 @@ import SellModal from "../Components/SellModal";
 import { useParams } from "react-router-dom";
 import { getStockDetail, getPortfolio } from "../Utils/Apis";
 import { ThreeDots } from "react-loader-spinner";
+import { getUserShares } from "../Utils/Apis";
 
 Chart.register(CategoryScale);
 
@@ -18,7 +19,8 @@ const StocksDetail = () => {
   const [stock, setStock] = useState(null);
   const [cash, setCash] = useState(0);
   const [prices, setPrices] = useState(null);
-  const [change, setChange] = useState(0)
+  const [change, setChange] = useState(0);
+  const [shares, setShares] = useState(0);
 
   const [chartData, setChartData] = useState(null);
 
@@ -46,8 +48,14 @@ const StocksDetail = () => {
               },
             ],
           });
-          setChange( (((s.data.last_traded_price-s.data.last_traded_prices.slice(-1))/(s.data.last_traded_prices.slice(-1))) * 100).toFixed(1))
-          //console.log(prices);
+          setChange(
+            (
+              ((s.data.last_traded_price -
+                s.data.last_traded_prices.slice(-1)) /
+                s.data.last_traded_prices.slice(-1)) *
+              100
+            ).toFixed(1)
+          );
         })
         .catch((error) => {
           console.error(error);
@@ -56,6 +64,14 @@ const StocksDetail = () => {
       getPortfolio(id)
         .then((p) => {
           setCash(p.data.cash);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+      getUserShares(id)
+        .then((p) => {
+          setShares(p.data[0].shares);
         })
         .catch((error) => {
           console.error(error);
@@ -133,6 +149,7 @@ const StocksDetail = () => {
                 company_name={stock.company_name}
                 current_price={stock.last_traded_price}
                 change={change}
+                shares={shares}
               />
             </div>
           </div>

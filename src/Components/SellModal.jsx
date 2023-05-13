@@ -3,7 +3,7 @@ import { useState } from "react";
 import { placeSellOrder } from "../Utils/Apis";
 import { toast } from "react-toastify";
 
-const SellModal = ({ id, short_name, company_name, current_price, change }) => {
+const SellModal = ({ id, short_name, company_name, current_price, change, shares }) => {
   const [qty, setQty] = useState(0);
   const [sell, setSell] = useState(0);
   const sign = change > 0 ? "+" : "";
@@ -118,7 +118,7 @@ const SellModal = ({ id, short_name, company_name, current_price, change }) => {
             <div
               className="text-light mb-2 mt-3 px-1 bi bi-pie-chart"
               style={{ fontSize: "18px" }}
-            >{` Current holdings : 1000 shares`}</div>
+            >{` Current holdings : ${shares} shares`}</div>
             <div className="modal-footer border-0 align-items-center">
               <button
                 type="button"
