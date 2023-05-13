@@ -48,6 +48,8 @@ const Ranking = () => {
           </>
         )}
       </div>
+      <br />
+      <br />
     </div>
   );
 };

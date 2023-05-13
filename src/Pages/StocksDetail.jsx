@@ -21,8 +21,9 @@ const StocksDetail = () => {
   const [prices, setPrices] = useState(null);
   const [change, setChange] = useState(0);
   const [shares, setShares] = useState(0);
-
   const [chartData, setChartData] = useState(null);
+
+  const [isOpen, setIsOpen] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
@@ -117,7 +118,8 @@ const StocksDetail = () => {
           )}
 
           {/* Buy/Sell  */}
-          <div className="row">
+
+          {isOpen && (<div className="row">
             <div className="col-6 text-end px-4">
               <button
                 className="btn btnbuysell btn-success fs-5 py-1 bold-text"
@@ -152,7 +154,49 @@ const StocksDetail = () => {
                 shares={shares}
               />
             </div>
-          </div>
+          </div>)}
+
+          {!isOpen && (<div className="text-warning mb-5 fs-5 text-center">[Note : Market is closed currently]</div>)}
+
+          {!isOpen && (<div className="row">
+            <div className="col-6 text-end px-4">
+              <button
+                className="btn btnbuysell btn-success fs-5 py-1 bold-text"
+                data-toggle="modal"
+                data-target={`#modal${id}`}
+                disabled
+              >
+                Buy
+              </button>
+              <BuyModal
+                id={stock.id}
+                short_name={stock.short_name}
+                company_name={stock.company_name}
+                current_price={stock.last_traded_price}
+                change={change}
+                cash={cash}
+              />
+            </div>
+            <div className="col-6 text-start px-4">
+              <button
+                className="btn btnbuysell btn-danger fs-5 py-1"
+                data-toggle="modal"
+                data-target={`#sellmodal${id}`}
+                disabled
+              >
+                Sell
+              </button>
+              <SellModal
+                id={stock.id}
+                short_name={stock.short_name}
+                company_name={stock.company_name}
+                current_price={stock.last_traded_price}
+                change={change}
+                shares={shares}
+              />
+            </div>
+          </div>)}
+
         </>
       )}
     </div>
