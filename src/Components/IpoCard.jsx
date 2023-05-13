@@ -13,18 +13,16 @@ const IpoCard = ({
   red_herring_prospectus,
   description,
 }) => {
-
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
-    window.addEventListener('resize', handleResize);
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
-  }, []
-  )
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div
@@ -44,7 +42,6 @@ const IpoCard = ({
         }}
       >
         <div className="row row-cols-2 row-cols-sm-4 g-4 align-items-center">
-
           {/* company Name */}
           <div className="col text-start text-sm-center">
             <p className="card-text" style={{ fontWeight: "bold" }}>
@@ -54,21 +51,22 @@ const IpoCard = ({
 
           {/* release date / subscribe */}
           {/* Release date */}
-          {windowWidth > 576 &&
+          {windowWidth > 576 && (
             <div className="col text-end text-sm-center">
               <p className="card-text">{release_date}</p>
             </div>
-          }
+          )}
 
           {/* subscribe */}
-          {windowWidth < 576 &&
+          {windowWidth < 576 && (
             <div className="col text-end text-sm-center">
               <div
-                className="btn btn-sm subscribe"
+                className="btn btn-sm subscribe bi bi-eye"
                 data-toggle="modal"
-                data-target={`#modal${id}`}
+                onClick={() => window.open(`${red_herring_prospectus}`)}
               >
-                Subscribe
+                {" "}
+                View Report
               </div>
               <div>
                 {/* MODAL */}
@@ -82,40 +80,37 @@ const IpoCard = ({
                   lot_size={lot_size}
                   total_volume={total_volume}
                   red_herring_prospectus={red_herring_prospectus}
-                  description={`${description.slice(
-                    0,
-                    1000
-                  )}...`}
+                  description={`${description.slice(0, 1000)}...`}
                 />
               </div>
             </div>
-          }
-
+          )}
 
           {/* Opening date or closing date */}
           {/* closing date */}
-          {windowWidth > 576 &&
+          {windowWidth > 576 && (
             <div className="col text-start text-sm-center">
               <p className="card-text">{closing_date}</p>
             </div>
-          }
+          )}
 
           {/* Opening date */}
-          {windowWidth < 576 &&
+          {windowWidth < 576 && (
             <div className="col text-start text-sm-center">
               <p className="card-text">{release_date}</p>
             </div>
-          }
+          )}
 
           {/* closing date or subscribe button */}
-          {windowWidth > 576 &&
+          {windowWidth > 576 && (
             <div className="col text-end text-sm-center">
               <div
-                className="btn btn-sm subscribe"
+                className="btn btn-sm subscribe bi bi-eye"
                 data-toggle="modal"
-                data-target={`#modal${id}`}
+                onClick={() => window.open(`${red_herring_prospectus}`)}
               >
-                Subscribe
+                {" "}
+                View Report
               </div>
               <div>
                 {/* MODAL */}
@@ -129,22 +124,17 @@ const IpoCard = ({
                   lot_size={lot_size}
                   total_volume={total_volume}
                   red_herring_prospectus={red_herring_prospectus}
-                  description={`${description.slice(
-                    0,
-                    1000
-                  )}...`}
+                  description={`${description.slice(0, 1000)}...`}
                 />
               </div>
             </div>
-          }
+          )}
 
-          {windowWidth < 576 &&
+          {windowWidth < 576 && (
             <div className="col text-end text-sm-center">
               <p className="card-text">{closing_date}</p>
             </div>
-
-          }
-
+          )}
         </div>
       </div>
     </div>
