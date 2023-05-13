@@ -75,8 +75,8 @@ const Stocks = () => {
             {stocks.map((stock) => {
               const change = (
                 ((stock.last_traded_price -
-                  stock.last_traded_prices.slice(-1)) /
-                  stock.last_traded_prices.slice(-1)) *
+                  stock.last_traded_prices.slice(-2)) /
+                  stock.last_traded_prices.slice(-2)) *
                 100
               ).toFixed(1)
               const color = (change>=0) ? "text-success" : "text-danger"

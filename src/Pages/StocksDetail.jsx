@@ -52,8 +52,8 @@ const StocksDetail = () => {
           setChange(
             (
               ((s.data.last_traded_price -
-                s.data.last_traded_prices.slice(-1)) /
-                s.data.last_traded_prices.slice(-1)) *
+                s.data.last_traded_prices.slice(-2)) /
+                s.data.last_traded_prices.slice(-2)) *
               100
             ).toFixed(1)
           );
