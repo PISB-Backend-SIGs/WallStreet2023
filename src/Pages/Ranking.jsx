@@ -27,10 +27,6 @@ const Ranking = () => {
       <div className="h3 ranking mb-3 mb-sm-4 text-center">Ranking</div>
       <br />
 
-      {/* <div class="comingsoon">
-                <h3 className='comingsoonText'>Will be updated soon...</h3>
-            </div> */}
-
       {!ranks && (
         <ThreeDots
           height="55"

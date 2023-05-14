@@ -11,7 +11,6 @@ const RankCard = ({id, rank, user_id, net_worth, ranki}) => {
           <div className="row row-cols-2 text-center">
             <div className="">{ranki}</div>
             <div>{user_id.first_name}</div>
-            {/* <div>{`₹ ${net_worth}`}</div> */}
           </div>
         </div>
       </div>
